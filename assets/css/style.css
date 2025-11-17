@@ -43,14 +43,19 @@ header nav ul li a:hover{
     font-size: 30px;
     display: none;
 }
+header.no-bootstrap{
+    align-content: center;
+    font-family: "Lexend", sans-serif
+}
 
 /*Body*/
-body{
-    background-color: #e9f2f8;
-    font-family: "Lexend", sans-serif;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    color: #2C3E50;
+body{ /*CORRECCION DE BOOTSTRAP (Lo destesto) */
+    all: revert !important;
+    background-color: #e9f2f8 !important;
+    font-family: "Lexend", sans-serif !important;
+    margin-left: 2.5% !important;
+    margin-right: 2.5% !important;
+    color: #2C3E50 !important;
 }
 
 .titulos h2{
@@ -253,7 +258,54 @@ div.lic3{
 }
 
 /*PPA*/
+/* Tarjeta principal */
+.quiz-card {
+    background: white;
+    border-radius: 18px;
+    border: 2px solid #9be6e7;
+}
 
+/* Texto pregunta */
+.question-text {
+    font-size: 1.2rem;
+}
+
+/* Opciones estilo quiz */
+.quiz-option {
+    display: flex;
+    align-items: center;
+    border: 2px solid #9be6e7;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    background: white;
+}
+
+/* Ocultar radio */
+.quiz-option input[type="radio"] {
+    display: none;
+}
+
+/* Estilo al pasar el mouse */
+.quiz-option:hover {
+    background: #e4f7ff;
+    border-color: #9be6e7;
+    transform: translateY(-2px);
+}
+
+/* Cuando la opción está seleccionada */
+.quiz-option input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.quiz-option input[type="radio"]:checked + span::before {
+    content: "✔ ";
+    font-weight: bold;
+    color: #4CAF50;
+}
 
 
 /*Cambios de tamaño de Pantallas DF*/ 
@@ -270,7 +322,7 @@ div.lic3{
         display: none;
     }
     h1{
-        margin: 0 auto;
+        margin: 10px auto;
     }    
 }
 
@@ -286,7 +338,7 @@ div.lic3{
         display: none;
     }
     h1{
-        margin: 0 auto;
+        margin: 10px auto;
     }
 
 }
@@ -294,6 +346,6 @@ div.lic3{
 @media (max-width: 430px){ /*Titulo en telefono menores a 430px*/
     h1{
         font-size: 30px;
-        margin: 0 auto;
+        margin: 10px auto;
     }
 }
