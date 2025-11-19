@@ -4,9 +4,9 @@
 /* Logo y botones superiores*/
 header{
     font-family: "Lexend", sans-serif;
-    display: flex;
+/*     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  */
     background-color: #9be6e7;
     padding: 10px 50px 10px 30px;
     border-radius: 10px
@@ -23,7 +23,6 @@ header nav ul {
     display: flex;
     column-gap: 25px;
     list-style: none;
-    
 }
 header nav ul li a{
     font-size: 20px;
@@ -46,6 +45,14 @@ header nav ul li a:hover{
 header.no-bootstrap{
     align-content: center;
     font-family: "Lexend", sans-serif
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    background-color: #b9feff;
 }
 
 /*Body*/
@@ -259,19 +266,19 @@ div.lic3{
 
 /*PPA*/
 /* Tarjeta principal */
-.quiz-card {
+.carta-pregunta {
     background: white;
     border-radius: 18px;
     border: 2px solid #9be6e7;
 }
 
 /* Texto pregunta */
-.question-text {
+.pregunta-texto {
     font-size: 1.2rem;
 }
 
 /* Opciones estilo quiz */
-.quiz-option {
+.preguntas-opciones {
     display: flex;
     align-items: center;
     border: 2px solid #9be6e7;
@@ -284,24 +291,24 @@ div.lic3{
 }
 
 /* Ocultar radio */
-.quiz-option input[type="radio"] {
+.preguntas-opciones input[type="radio"] {
     display: none;
 }
 
 /* Estilo al pasar el mouse */
-.quiz-option:hover {
+.preguntas-opciones:hover {
     background: #e4f7ff;
     border-color: #9be6e7;
     transform: translateY(-2px);
 }
 
 /* Cuando la opción está seleccionada */
-.quiz-option input[type="radio"]:checked + span {
+.preguntas-opciones input[type="radio"]:checked + span {
     font-weight: bold;
     color: #4CAF50;
 }
 
-.quiz-option input[type="radio"]:checked + span::before {
+.preguntas-opciones input[type="radio"]:checked + span::before {
     content: "✔ ";
     font-weight: bold;
     color: #4CAF50;

@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Icono hamburguesa -->
     <link rel="stylesheet" href="../assets/css/style.css"> <!-- Conexion a CSS -->
     <title>Licencia Piloto Avion</title>
 </head>
 
 <body>
-<header class="header-custom bg-header rounded-bottom">
-    <div class="container d-flex justify-content-between align-items-center py-2">
+<header class="bustrap header-custom bg-header rounded-bottom">
+<!--     <div class="container d-flex justify-content-between align-items-center py-2">
 
-        <!-- LOGO -->
+        
         <h1 class="m-0 fw-bold d-flex align-items-center gap-2">
             Soy Piloto 🧑🏼‍✈️
         </h1>
 
-        <!-- MENÚ -->
+        
         <nav class="d-none d-md-block">
             <ul class="d-flex column-gap-3 list-unstyled m-0">
                 <li><a href="../index.html"><strong>Home</strong></a></li>
@@ -29,19 +29,48 @@
             </ul>
         </nav>
 
-        <!-- Ícono hamburguesa (solo móvil) -->
+        
         <i class="fa-solid fa-bars barras d-md-none"></i>
-
+    </div>  -->
+    
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <h1 class="m-0 fw-bold d-flex align-items-center gap-2">
+            Soy Piloto 🧑🏼‍✈️
+        </h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item fw-bold">
+                    <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link" href="./licencias.html">Licencias</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link" href="./mision.html">Nuestra misión</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link" href="./perfil.html">Perfil</a>
+                </li>
+                <li class="nav-item fw-bold">
+                    <a class="nav-link" href="./ppa.html">PPA</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
 </header>
 
 <main class="container my-5">
     <h2 class="text-center mb-4">Piloto Privado de Avión</h2>
 
     <!-- Pregunta 1 -->
-    <div class="quiz-card shadow-sm p-4 mb-4">
+    <div class="carta-pregunta shadow-sm p-4 mb-4">
         <h5 class="fw-bold">Pregunta 1</h5>
-        <p class="question-text">
+        <p class="pregunta-texto">
             ¿Cuál es el rango de velocidades para volar con máximo flaps extendido?
         </p>
 
@@ -50,17 +79,17 @@
         </div>
 
         <form>
-            <label class="quiz-option">
+            <label class="preguntas-opciones">
                 <input type="radio" name="p1" value="A">
                 <span>A: 60 a 100 MPH</span>
             </label>
 
-            <label class="quiz-option">
+            <label class="preguntas-opciones">
                 <input type="radio" name="p1" value="B">
                 <span>B: 60 a 208 MPH</span>
             </label>
 
-            <label class="quiz-option">
+            <label class="preguntas-opciones">
                 <input type="radio" name="p1" value="C">
                 <span>C: 208 MPH</span>
             </label>
@@ -68,24 +97,24 @@
     </div>
 
         <!-- Pregunta 2 -->
-    <div class="quiz-card shadow-sm p-4 mb-4">
+    <div class="carta-pregunta shadow-sm p-4 mb-4">
         <h5 class="fw-bold">Pregunta 2</h5>
-        <p class="question-text">
+        <p class="pregunta-texto">
             ¿Que sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?
         </p>
 
         <form>
-            <label class="quiz-option">
+            <label class="preguntas-opciones">
                 <input type="radio" name="p1" value="A">
                 <span>A: Tanto el volumen del aire que ingresa al carburador como la cantidad de combustible disminuirán.</span>
             </label>
 
-            <label class="quiz-option">
+            <label class="preguntas-opciones">
                 <input type="radio" name="p1" value="B">
                 <span>B: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible se incrementara.</span>
             </label>
 
-            <label class="quiz-option">
+            <label class="preguntas-opciones">
                 <input type="radio" name="p1" value="C">
                 <span>C: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible permanecerá constante.</span>
             </label>
