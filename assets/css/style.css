@@ -4,9 +4,6 @@
 /* Logo y botones superiores*/
 header{
     font-family: "Lexend", sans-serif;
-/*     display: flex;
-    justify-content: space-between;
-    align-items: center;  */
     background-color: #9be6e7;
     padding: 10px 50px 10px 30px;
     border-radius: 10px
@@ -60,8 +57,6 @@ body{ /*CORRECCION DE BOOTSTRAP (Lo destesto) */
     all: revert !important;
     background-color: #e9f2f8 !important;
     font-family: "Lexend", sans-serif !important;
-    margin-left: 2.5% !important;
-    margin-right: 2.5% !important;
     color: #2C3E50 !important;
 }
 
@@ -116,7 +111,7 @@ footer nav ul li a:hover{
     display: grid;
     grid-template-rows: repeat(2, 3fr);
     grid-template-columns: repeat(3, 2fr);
-    padding: 5px 5px;
+
 }
 section.Privado div{
     border: 3px solid #9be6e7;
@@ -163,9 +158,6 @@ section.Privado div{
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    padding: 20px;
-    border: 2px solid #b6e3e3;
-    border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
     background-color: white; /*Fondo de la tarjeta*/
 }
@@ -191,7 +183,6 @@ section.Privado div{
     justify-content: center;
     grid-template-rows: 250px 50px 150px;
     grid-template-columns: repeat(3, 1fr);
-    margin: 0 2.5% 0 2.5%;
     grid-template-areas: 
     "inf inf foto"
     "tit tit tit"
@@ -217,8 +208,9 @@ div.foto{
 div.info{
     grid-area: inf;
     margin: 10px;
-    padding-left: 20px;
-    border: 3px solid #b6e3e3;
+    padding: 20px;
+    padding-left: 40px;
+    border: 4px solid #b6e3e3;
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 10px grey;
@@ -230,8 +222,7 @@ div.info p{
 div.titulo{
     grid-area: tit;
     justify-self: center;
-    align-self: Center;
-    margin-top: 7px;
+    align-self: 0;
 }
 div.lic1{
     grid-area: lic1;
@@ -314,6 +305,17 @@ div.lic3{
     color: #4CAF50;
 }
 
+.preguntas-opciones-f input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #af4c4c;
+}
+
+.preguntas-opciones-f input[type="radio"]:checked + span::before {
+    content: "✔ ";
+    font-weight: bold;
+    color: #af4c4c;
+}
+
 
 /*Cambios de tamaño de Pantallas DF*/ 
 
@@ -350,7 +352,7 @@ div.lic3{
 
 }
 
-@media (max-width: 430px){ /*Titulo en telefono menores a 430px*/
+@media (max-width: 445px){ /*Titulo en telefono menores a 430px*/
     h1{
         font-size: 30px;
         margin: 10px auto;
