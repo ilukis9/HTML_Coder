@@ -13,9 +13,6 @@ h1 {
     color: #2C3E50;
     margin: 10px;
 }
-header nav {
-    display: flex;
-}
 header nav ul {
     display: flex;
     column-gap: 25px;
@@ -34,20 +31,13 @@ header nav ul li a{
 header nav ul li a:hover{
     background-color: #b9feff;   /* fondo al pasar el mouse */
 }
-.barras{ /*Menu Hamburguesa*/
-    color: #2C3E50;
-    font-size: 30px;
-    display: none;
-}
 header.no-bootstrap{
     align-content: center;
     font-family: "Lexend", sans-serif
 }
-
 .navbar-toggler {
     border: none !important;
 }
-
 .navbar-toggler:focus {
     background-color: #b9feff;
 }
@@ -165,11 +155,11 @@ section.Privado div{
 
 /*Nuestra Mision*/
 .mi1 h2{
-    text-align: left;    
+    text-align: left; 
+    margin-bottom: 1.5rem;
 }
 .mi1 p{
-    padding: 0px 20px;
-    margin: 0;    
+    margin: 16px 0;
 }
 .mi1 h3{
     padding: 0px 5% ;
