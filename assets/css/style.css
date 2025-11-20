@@ -181,7 +181,7 @@ section.Privado div{
 .perfil{
     display: grid;
     justify-content: center;
-    grid-template-rows: 250px 50px 150px;
+    grid-template-rows: 3fr 1fr 3fr;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
     "inf inf foto"
@@ -222,13 +222,14 @@ div.info p{
 div.titulo{
     grid-area: tit;
     justify-self: center;
-    align-self: 0;
+    align-self: center;
+    padding-top: 19px;
 }
 div.lic1{
     grid-area: lic1;
-    margin: 0 10px 0 10px;
+    margin: 5%;
     padding: 10px;
-    border: 3px solid #b6e3e3;
+    border: 4px solid #b6e3e3;
     background-color: white;
     border-radius: 10px;
     text-align: center;
@@ -236,9 +237,9 @@ div.lic1{
 }
 div.lic2{
     grid-area: lic2;
-    margin: 0 10px 0 10px;
+    margin: 5%;
     padding: 10px;
-    border: 3px solid #b6e3e3;
+    border: 4px solid #b6e3e3;
     background-color: white;
     border-radius: 10px;
     text-align: center;
@@ -246,14 +247,21 @@ div.lic2{
 }
 div.lic3{
     grid-area: lic3;
-    margin: 0 10px 0 10px;
+    margin: 5%;
     padding: 10px;
-    border: 3px solid #b6e3e3;
+    border: 4px solid #b6e3e3;
     background-color: white;
     border-radius: 10px;
     text-align: center;
     box-shadow: 5px 5px 10px grey;
 }
+.progress-stacked {
+    margin: 25px 0 25px 0;
+}
+/*Colores para barras de progreso*/
+.colorv{ background-color: #4CAF50 !important;}
+.colorf{ background-color: #C13246 !important;}
+.colorp{ background-color: #FFB800 !important;}
 
 /*PPA*/
 /* Tarjeta principal */
@@ -332,7 +340,16 @@ div.lic3{
     }
     h1{
         margin: 10px auto;
-    }    
+    } 
+    .perfil{
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-areas: 
+        "inf inf"
+        "tit tit"
+        "lic1 lic2"
+    }
+    div.foto{display: none;}
+    div.lic3{display: none;}
 }
 
 @media (max-width: 650px){ /*Telefono*/
@@ -349,6 +366,18 @@ div.lic3{
     h1{
         margin: 10px auto;
     }
+        .perfil{
+        grid-template-columns: repeat(1, 2fr);
+        grid-template-areas: 
+        "inf"
+        "tit"
+        "lic1"
+        "lic2"
+    }
+    div.foto{display: none;}
+    div.lic1{margin: 0 0 2.5% 0;}
+    div.lic2{margin: 2.5% 0 0 0;}
+    div.lic3{display: none;}
 
 }
 
