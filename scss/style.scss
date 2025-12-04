@@ -1,0 +1,254 @@
+@use "header";
+
+@use "footer";
+
+@use "queries";
+
+
+body{ /*CORRECCION DE BOOTSTRAP (Lo destesto) */
+   all: revert !important;
+   background-color: #e9f2f8 !important;
+   font-family: "Lexend", sans-serif !important;
+   color: #2C3E50 !important;
+}
+.titulos h2{
+   font-size: 100px;
+}
+
+/*index*/
+.txt{
+   margin: 2rem 0;
+}
+.txt2{
+   margin: 1rem 0;
+}
+
+/*Licencias*/
+.Privado {
+   display: grid;
+   grid-template-rows: repeat(2, 3fr);
+   grid-template-columns: repeat(3, 2fr);
+
+   div {
+      border: 3px solid #9be6e7;
+      border-radius: 15px;
+      margin: 10px;
+      padding: 5px 5px 10px 5px;
+
+      /* Separación de botones inferiores */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 5px 5px 10px grey;
+      background-color: white;
+   }
+
+   h2 {
+      font-size: 20px;
+      text-decoration: underline;
+      padding: 0 5%;
+      text-align: center;
+   }
+
+   p {
+      padding: 0 5%;
+      font-size: small;
+      ul {
+         li {
+         font-size: small;
+         }
+      }
+   }
+
+   nav {
+      ul {
+         font-size: 15px;
+         display: flex;
+         list-style: none;
+         column-gap: 10px;
+         justify-content: center;
+         padding-inline-start: 0;
+         li a {
+            text-decoration: none;
+            color: white;
+            border: 2px solid #2c3e50;
+            padding: 8px 16px;
+            background-color: #2c3e50;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+            &:hover {
+               background-color: white;
+               color: #2c3e50;
+            }
+         }
+      }
+   }
+}
+
+/*Nuestra Mision*/
+.mi1{
+   h2{
+      text-align: left; 
+      margin-bottom: 1.5rem;
+   }
+   p{
+      margin: 16px 0;
+   }
+   h3{
+      padding: 0px 5% ;
+      text-align: right;
+   }
+}
+
+/*Perfil */
+.perfil{
+   display: grid;
+   justify-content: center;
+   grid-template-rows: 3fr 1fr 3fr;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-areas: 
+   "inf inf foto"
+   "tit tit tit"
+   "lic1 lic2 lic3"
+   ;
+   h2{
+      font-size: 25px;
+      padding-bottom: 2%;
+   }
+   h3{
+      justify-self: center;
+      font-size: 20px;
+      margin: 5px;
+   }
+}
+
+.foto{
+   grid-area: foto;
+   margin: 10px;
+   padding: 15px;
+   justify-self: center;
+   align-content: center;
+   border: 3px solid #b6e3e3;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px grey;
+}
+.info{
+   grid-area: inf;
+   margin: 10px;
+   padding: 20px;
+   padding-left: 40px;
+   border: 4px solid #b6e3e3;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px grey;
+      p{
+      margin: 0 15px 0 1rem;
+   }
+}
+.titulo{
+   grid-area: tit;
+   justify-self: center;
+   align-self: center;
+   padding-top: 19px;
+}
+.lic1{
+   grid-area: lic1;
+   margin: 5%;
+   padding: 10px;
+   border: 4px solid #b6e3e3;
+   background-color: white;
+   border-radius: 10px;
+   text-align: center;
+   box-shadow: 5px 5px 10px grey;
+}
+.lic2{
+   grid-area: lic2;
+   margin: 5%;
+   padding: 10px;
+   border: 4px solid #b6e3e3;
+   background-color: white;
+   border-radius: 10px;
+   text-align: center;
+   box-shadow: 5px 5px 10px grey;
+}
+.lic3{
+   grid-area: lic3;
+   margin: 5%;
+   padding: 10px;
+   border: 4px solid #b6e3e3;
+   background-color: white;
+   border-radius: 10px;
+   text-align: center;
+   box-shadow: 5px 5px 10px grey;
+}
+.progress-stacked {
+   margin: 25px 0 25px 0;
+}
+/*Colores para barras de progreso*/
+.colorv{ background-color: #4CAF50 !important;}
+.colorf{ background-color: #C13246 !important;}
+.colorp{ background-color: #FFB800 !important;}
+
+/*PPA*/
+/* Tarjeta principal */
+.carta-pregunta {
+   background: white;
+   border-radius: 18px;
+   border: 2px solid #9be6e7;
+}
+
+/* Texto pregunta */
+.pregunta-texto {
+   font-size: 1.2rem;
+}
+
+/* Opciones estilo quiz */
+.preguntas-opciones {
+   display: flex;
+   align-items: center;
+   border: 2px solid #9be6e7;
+   padding: 12px 16px;
+   border-radius: 12px;
+   margin-bottom: 12px;
+   cursor: pointer;
+   transition: 0.25s ease;
+   background: white;
+}
+
+/* Ocultar radio */
+.preguntas-opciones input[type="radio"] {
+   display: none;
+}
+
+/* Estilo al pasar el mouse */
+.preguntas-opciones:hover {
+   background: #e4f7ff;
+   border-color: #9be6e7;
+   transform: translateY(-2px);
+}
+
+/* Cuando la opción está seleccionada */
+.preguntas-opciones input[type="radio"]:checked + span {
+   font-weight: bold;
+   color: #4CAF50;
+}
+
+.preguntas-opciones input[type="radio"]:checked + span::before {
+   content: "✔ ";
+   font-weight: bold;
+   color: #4CAF50;
+}
+
+.preguntas-opciones-f input[type="radio"]:checked + span {
+   font-weight: bold;
+   color: #af4c4c;
+}
+
+.preguntas-opciones-f input[type="radio"]:checked + span::before {
+   content: "✔ ";
+   font-weight: bold;
+   color: #af4c4c;
+
+}
+
