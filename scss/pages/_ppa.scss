@@ -1,0 +1,59 @@
+/* Tarjeta principal */
+.carta-pregunta {
+   background: white;
+   border-radius: 18px;
+   border: 2px solid #9be6e7;
+}
+
+/* Texto pregunta */
+.pregunta-texto {
+   font-size: 1.2rem;
+}
+
+/* Opciones estilo quiz */
+.preguntas-opciones {
+   display: flex;
+   align-items: center;
+   border: 2px solid #9be6e7;
+   padding: 12px 16px;
+   border-radius: 12px;
+   margin-bottom: 12px;
+   cursor: pointer;
+   transition: 0.25s ease;
+   background: white;
+}
+
+/* Ocultar radio */
+.preguntas-opciones input[type="radio"] {
+   display: none;
+}
+
+/* Estilo al pasar el mouse */
+.preguntas-opciones:hover {
+   background: #e4f7ff;
+   border-color: #9be6e7;
+   transform: translateY(-2px);
+}
+
+/* Cuando la opción está seleccionada */
+.preguntas-opciones input[type="radio"]:checked + span {
+   font-weight: bold;
+   color: #4CAF50;
+}
+
+.preguntas-opciones input[type="radio"]:checked + span::before {
+   content: "✔ ";
+   font-weight: bold;
+   color: #4CAF50;
+}
+
+.preguntas-opciones-f input[type="radio"]:checked + span {
+   font-weight: bold;
+   color: #af4c4c;
+}
+
+.preguntas-opciones-f input[type="radio"]:checked + span::before {
+   content: "✔ ";
+   font-weight: bold;
+   color: #af4c4c;
+}

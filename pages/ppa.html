@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piloto Privado de Avion | SoyPiloto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css"> <!-- Conexion a CSS -->
-    <title>Piloto Privado de Avion</title>
+    <!-- Conexion animaciones --> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Conexion a CSS --> <link rel="stylesheet" href="../assets/css/style.css"> 
+
 </head>
 
 <body>
 <header class="bustrap header-custom bg-header rounded-bottom">
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid container mt-1 mb-1">
-        <a class="navbar-brand" href="../index.html"><h1 class="m-0 fw-bold d-flex align-items-center gap-2">
-            Soy Piloto 🧑🏼‍✈️
-        </h1></a>
+        <a class="navbar-brand" href="../index.html"><h1 class="m-0 fw-bold d-flex align-items-center gap-2"> SoyPiloto 🧑🏼‍✈️</h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,7 +45,7 @@
     <h2 class="text-center mb-4">Piloto Privado de Avión</h2>
 
     <!-- Pregunta 1 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4">
+    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
         <h5 class="fw-bold">Pregunta 1</h5>
         <p class="pregunta-texto">
             ¿Cuál es el rango de velocidades para volar con máximo flaps extendido?
@@ -73,9 +73,84 @@
         </form>
     </div>
 
-        <!-- Pregunta 2 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4">
-        <h5 class="fw-bold">Pregunta 2</h5>
+    <!-- Pregunta 2 -->
+    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-right" data-aos-duration="1500">
+    <h5 class="fw-bold">Pregunta 2</h5>
+        <p class="pregunta-texto">
+            ¿Que sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?
+        </p>
+
+        <form>
+            <label class="preguntas-opciones preguntas-opciones-f">
+                <input type="radio" name="p1" value="A">
+                <span>A: Tanto el volumen del aire que ingresa al carburador como la cantidad de combustible disminuirán.</span>
+            </label>
+
+            <label class="preguntas-opciones preguntas-opciones-f">
+                <input type="radio" name="p1" value="B">
+                <span>B: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible se incrementara.</span>
+            </label>
+
+            <label class="preguntas-opciones">
+                <input type="radio" name="p1" value="C">
+                <span>C: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible permanecerá constante.</span>
+            </label>
+        </form>
+    </div>
+
+    <!-- Pregunta 3 -->
+    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-left" data-aos-duration="1500">
+        <h5 class="fw-bold">Pregunta 3</h5>
+        <p class="pregunta-texto">
+            ¿Que sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?
+        </p>
+
+        <form>
+            <label class="preguntas-opciones preguntas-opciones-f">
+                <input type="radio" name="p1" value="A">
+                <span>A: Tanto el volumen del aire que ingresa al carburador como la cantidad de combustible disminuirán.</span>
+            </label>
+
+            <label class="preguntas-opciones preguntas-opciones-f">
+                <input type="radio" name="p1" value="B">
+                <span>B: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible se incrementara.</span>
+            </label>
+
+            <label class="preguntas-opciones">
+                <input type="radio" name="p1" value="C">
+                <span>C: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible permanecerá constante.</span>
+            </label>
+        </form>
+    </div>
+
+    <!-- Pregunta 4 -->
+    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-right" data-aos-duration="1500">
+        <h5 class="fw-bold">Pregunta 4</h5>
+        <p class="pregunta-texto">
+            ¿Que sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?
+        </p>
+
+        <form>
+            <label class="preguntas-opciones preguntas-opciones-f" >
+                <input type="radio" name="p1" value="A">
+                <span>A: Tanto el volumen del aire que ingresa al carburador como la cantidad de combustible disminuirán.</span>
+            </label>
+
+            <label class="preguntas-opciones preguntas-opciones-f">
+                <input type="radio" name="p1" value="B">
+                <span>B: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible se incrementara.</span>
+            </label>
+
+            <label class="preguntas-opciones">
+                <input type="radio" name="p1" value="C">
+                <span>C: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible permanecerá constante.</span>
+            </label>
+        </form>
+    </div>
+
+    <!-- Pregunta 5 -->
+    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-left" data-aos-duration="1500">
+        <h5 class="fw-bold">Pregunta 5</h5>
         <p class="pregunta-texto">
             ¿Que sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?
         </p>
@@ -101,9 +176,7 @@
 </main>
 <hr>
 
-</body>
-
-<footer class="no-bootstrap"> <!-- Redes de pie de pagina -->
+<footer class="no-bootstrap" > <!-- Redes de pie de pagina -->
 <nav>
     <ul>
         <li><a href="https://www.instagram.com/">Instagram</a></li>
@@ -112,5 +185,10 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </footer>
+
 </html>

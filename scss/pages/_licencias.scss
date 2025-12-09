@@ -1,0 +1,54 @@
+.Privado{
+   display: grid;
+   grid-template-rows: repeat(2, 3fr);
+   grid-template-columns: repeat(3, 2fr);
+
+}
+section.Privado div{
+   border: 3px solid #9be6e7;
+   border-radius: 15px;
+   margin: 10px;
+   padding: 5px 5px 10px 5px;
+}
+.Privado h2{
+   font-size: 20px;
+   text-decoration: underline;
+   padding: 0px 5% ;
+   text-align: center;
+}
+.Privado p{ /*Texto Detalle*/
+   padding: 0 5% 0 5%;
+   font-size: small;
+}
+   /*Botones de licencias*/
+.Privado p ul li{ 
+   font-size: small;
+}
+.Privado nav ul{ /*Forma y color de botones*/
+   font-size: 15px;
+   display: flex;
+   list-style: none;
+   column-gap: 10px;
+   justify-content: center;
+   padding-inline-start: 0;
+}
+.Privado nav ul li a{ /*Forma y color de botones*/
+   text-decoration: none;
+   color: white; /*Letras*/
+   border: 2px solid #2C3E50; 
+   padding: 8px 16px; 
+   background-color: #2C3E50; 
+   border-radius: 6px;  
+   transition: background-color 0.3s, color 0.3s; /* animación suave */
+}
+.Privado nav ul li a:hover { /*Cambio fondo al pasar el mouse*/
+   background-color: white;  
+   color: #2C3E50;
+}
+.Privado div{ /*Separación de los botones inferiores*/
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between; 
+   box-shadow: 5px 5px 10px grey;
+   background-color: white; /*Fondo de la tarjeta*/
+}
