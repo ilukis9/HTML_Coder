@@ -2,7 +2,7 @@
 
 @media (max-width: 1100px){ /*Tablet*/
    .Privado{
-      grid-template-rows: repeat(2, 3fr);
+      grid-template-rows: repeat(3, 3fr);
       grid-template-columns: repeat(2, 2fr);  
    }
    .barras{
@@ -27,9 +27,9 @@
    div.lic3{display: none;}
 }
 
-@media (max-width: 650px){ /*Telefono*/
+@media (max-width: 770px){ /*Telefono*/
    .Privado{
-      grid-template-rows: repeat(4, 3fr);
+      grid-template-rows: repeat(6, 3fr);
       grid-template-columns: repeat(1, 2fr);  
    }
    .barras{

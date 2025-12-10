@@ -16,8 +16,7 @@ h1 {
 
 header nav ul {
   display: flex;
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  column-gap: 25px;
   list-style: none;
 }
 
@@ -69,8 +68,7 @@ footer nav {
 
 footer nav ul {
   display: flex;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   list-style: none;
 }
 
@@ -136,8 +134,7 @@ section.Privado div {
   font-size: 15px;
   display: flex;
   list-style: none;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   justify-content: center;
   padding-inline-start: 0;
 }
@@ -340,7 +337,7 @@ div.lic3 {
 /*Cambios de tamaño de Pantallas DF*/
 @media (max-width: 1100px) { /*Tablet*/
   .Privado {
-    grid-template-rows: repeat(2, 3fr);
+    grid-template-rows: repeat(3, 3fr);
     grid-template-columns: repeat(2, 2fr);
   }
   .barras {
@@ -365,9 +362,9 @@ div.lic3 {
     display: none;
   }
 }
-@media (max-width: 650px) { /*Telefono*/
+@media (max-width: 770px) { /*Telefono*/
   .Privado {
-    grid-template-rows: repeat(4, 3fr);
+    grid-template-rows: repeat(6, 3fr);
     grid-template-columns: repeat(1, 2fr);
   }
   .barras {
@@ -402,4 +399,6 @@ div.lic3 {
   h1 {
     font-size: 2rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
