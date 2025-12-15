@@ -1,11 +1,19 @@
-.mi1 h2{
-   text-align: left; 
-   margin-bottom: 1.5rem;
-}
-.mi1 p{
-   margin: 16px 0;
-}
-.mi1 h3{
-   padding: 0px 5% ;
-   text-align: right;
+.mi1 {
+   h2{
+      text-align: left; 
+      margin-bottom: 1.5rem;
+   }
+   p{
+      margin: 16px 0;
+      text-align: justify;
+   }
+   h3{
+      padding: 0px 5% ;
+      text-align: right;
+   }
+   img{
+      border: 2px #2C3E50;
+      border-radius: 12px;
+      box-shadow: 5px 5px 10px grey;
+   }
 }

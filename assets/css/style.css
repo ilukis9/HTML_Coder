@@ -1,27 +1,28 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
 /* Logo y botones superiores*/
-header {
-  font-family: "Lexend", sans-serif;
-  background-color: #9be6e7;
-  padding: 10px 50px 10px 30px;
-  border-radius: 10px;
-}
-
 h1 {
   font-size: 3rem;
   color: #2C3E50;
   margin: 10px;
 }
 
+header {
+  font-family: "Lexend", sans-serif;
+  background-color: #9be6e7;
+  padding: 10px 50px 10px 30px;
+  border-radius: 10px;
+}
+header.no-bootstrap {
+  align-content: center;
+  font-family: "Lexend", sans-serif;
+}
 header nav ul {
   display: flex;
   column-gap: 25px;
   list-style: none;
 }
-
 header nav ul li a {
-  font-size: 20px;
   text-decoration: none;
   color: #2C3E50;
   border: 2px solid #9be6e7;
@@ -30,20 +31,13 @@ header nav ul li a {
   border-radius: 10px;
   transition: background-color 0.25s, color 0.25s; /* animación suave */
 }
-
 header nav ul li a:hover {
   background-color: #b9feff; /* fondo al pasar el mouse */
-}
-
-header.no-bootstrap {
-  align-content: center;
-  font-family: "Lexend", sans-serif;
 }
 
 .navbar-toggler {
   border: none !important;
 }
-
 .navbar-toggler:focus {
   background-color: #b9feff;
 }
@@ -94,10 +88,15 @@ footer nav ul li a:hover {
 /*index*/
 .txt {
   margin: 2rem 0;
+  justify-self: center;
+  font-size: 1.15em;
 }
 
 .txt2 {
   margin: 1rem 0;
+  border: 2px #2C3E50;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px grey;
 }
 
 .Privado {
@@ -105,31 +104,31 @@ footer nav ul li a:hover {
   grid-template-rows: repeat(2, 3fr);
   grid-template-columns: repeat(3, 2fr);
 }
-
-section.Privado div {
+.Privado div {
   border: 3px solid #9be6e7;
   border-radius: 15px;
-  margin: 10px;
-  padding: 5px 5px 10px 5px;
+  margin: 0.5em;
+  padding: 10px 5px 10px 5px;
+  /*Separación de los botones inferiores*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 5px 10px grey;
+  background-color: white; /*Fondo de la tarjeta*/
 }
-
 .Privado h2 {
   font-size: 20px;
   text-decoration: underline;
-  padding: 0px 5%;
+  padding: 10px 5% 0 5%;
   text-align: center;
 }
-
 .Privado p { /*Texto Detalle*/
-  padding: 0 5% 0 5%;
+  padding: 10px 5% 10px 5%;
   font-size: small;
 }
-
-/*Botones de licencias*/
-.Privado p ul li {
+.Privado p ul li { /*Botones de licencias*/
   font-size: small;
 }
-
 .Privado nav ul { /*Forma y color de botones*/
   font-size: 15px;
   display: flex;
@@ -138,42 +137,41 @@ section.Privado div {
   justify-content: center;
   padding-inline-start: 0;
 }
-
 .Privado nav ul li a { /*Forma y color de botones*/
   text-decoration: none;
   color: white; /*Letras*/
   border: 2px solid #2C3E50;
-  padding: 8px 16px;
+  padding: 8px 8px;
   background-color: #2C3E50;
   border-radius: 6px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px; /*mismo ancho*/
+  text-align: center; /*Centrado en boton*/
   transition: background-color 0.3s, color 0.3s; /* animación suave */
 }
-
 .Privado nav ul li a:hover { /*Cambio fondo al pasar el mouse*/
   background-color: white;
   color: #2C3E50;
-}
-
-.Privado div { /*Separación de los botones inferiores*/
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 5px 5px 10px grey;
-  background-color: white; /*Fondo de la tarjeta*/
 }
 
 .mi1 h2 {
   text-align: left;
   margin-bottom: 1.5rem;
 }
-
 .mi1 p {
   margin: 16px 0;
+  text-align: justify;
 }
-
 .mi1 h3 {
   padding: 0px 5%;
   text-align: right;
+}
+.mi1 img {
+  border: 2px #2C3E50;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px grey;
 }
 
 .perfil {
@@ -183,14 +181,13 @@ section.Privado div {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "inf inf foto" "tit tit tit" "lic1 lic2 lic3";
 }
-
-.perfil h4 {
+.perfil h3 {
   justify-self: center;
   font-size: 20px;
   margin: 5px;
 }
 
-div.foto {
+.foto {
   grid-area: foto;
   margin: 10px;
   padding: 15px;
@@ -202,7 +199,7 @@ div.foto {
   box-shadow: 5px 5px 10px grey;
 }
 
-div.info {
+.info {
   grid-area: inf;
   margin: 10px;
   padding: 20px;
@@ -212,19 +209,18 @@ div.info {
   border-radius: 10px;
   box-shadow: 5px 5px 10px grey;
 }
-
-div.info p {
+.info p {
   margin: 0 15px 0 15px;
 }
 
-div.titulo {
+.titulo {
   grid-area: tit;
   justify-self: center;
   align-self: center;
   padding-top: 19px;
 }
 
-div.lic1 {
+.lic1 {
   grid-area: lic1;
   margin: 5%;
   padding: 10px;
@@ -235,7 +231,7 @@ div.lic1 {
   box-shadow: 5px 5px 10px grey;
 }
 
-div.lic2 {
+.lic2 {
   grid-area: lic2;
   margin: 5%;
   padding: 10px;
@@ -246,7 +242,7 @@ div.lic2 {
   box-shadow: 5px 5px 10px grey;
 }
 
-div.lic3 {
+.lic3 {
   grid-area: lic3;
   margin: 5%;
   padding: 10px;
@@ -329,13 +325,17 @@ div.lic3 {
 }
 
 .preguntas-opciones-f input[type=radio]:checked + span::before {
-  content: "✔ ";
+  content: "x ";
   font-weight: bold;
   color: #af4c4c;
+  font-size: 1.15em;
 }
 
 /*Cambios de tamaño de Pantallas DF*/
 @media (max-width: 1100px) { /*Tablet*/
+  .txt2 {
+    width: 400px;
+  }
   .Privado {
     grid-template-rows: repeat(3, 3fr);
     grid-template-columns: repeat(2, 2fr);
@@ -363,6 +363,9 @@ div.lic3 {
   }
 }
 @media (max-width: 770px) { /*Telefono*/
+  .txt2 {
+    width: 375px;
+  }
   .Privado {
     grid-template-rows: repeat(6, 3fr);
     grid-template-columns: repeat(1, 2fr);
@@ -395,9 +398,23 @@ div.lic3 {
     display: none;
   }
 }
-@media (max-width: 445px) { /*Titulo en telefono menores a 430px*/
+@media (max-width: 500px) { /*Titulo en telefono menores a 430px*/
   h1 {
     font-size: 2rem;
+  }
+  .txt2 {
+    width: 325px;
+  }
+  .txt {
+    width: 325px;
+  }
+  .Privado nav ul {
+    flex-direction: column;
+    row-gap: 10px; /* separación vertical */
+    align-items: center;
+  }
+  .Privado nav ul li a {
+    width: 175px;
   }
 }
 

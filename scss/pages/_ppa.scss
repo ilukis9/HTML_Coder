@@ -53,7 +53,8 @@
 }
 
 .preguntas-opciones-f input[type="radio"]:checked + span::before {
-   content: "✔ ";
+   content: "x ";
    font-weight: bold;
    color: #af4c4c;
+   font-size: 1.15em;
 }
