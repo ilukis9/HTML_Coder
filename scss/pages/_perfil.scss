@@ -31,8 +31,11 @@
    margin: 10px;
    padding: 20px;
    @extend %bordes-comunes;
+   h2{
+      font-size: 25px;
+   }
    p{
-      margin: 0 15px 0 15px;
+      margin: 10px 15px 0 15px;
    }
 }
 .titulo{

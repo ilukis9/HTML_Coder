@@ -1,3 +1,5 @@
+@use "../util/variables";
+
 .mi1 {
    h2{
       text-align: left; 
@@ -12,8 +14,7 @@
       text-align: right;
    }
    img{
-      border: 2px #2C3E50;
       border-radius: 12px;
-      box-shadow: 5px 5px 10px grey;
+      box-shadow: 5px 5px 10px variables.$color-sombras;
    }
 }

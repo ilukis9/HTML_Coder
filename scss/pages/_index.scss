@@ -1,3 +1,5 @@
+@use "../util/variables";
+
 /*index*/
 .txt{
    margin: 2rem 0;
@@ -6,8 +8,7 @@
 }
 .txt2{
    margin: 1rem 0;
-   border: 2px #2C3E50;
    border-radius: 12px;
-   box-shadow: 5px 5px 10px grey;
+   box-shadow: 5px 5px 10px variables.$color-sombras;
    width: 425px
 }
