@@ -1,3 +1,6 @@
+@use "../util/variables";
+@use "../util/extend";
+
 .perfil{
    display: grid;
    justify-content: center;
@@ -16,24 +19,18 @@
 }
 .foto{
    grid-area: foto;
-   margin: 10px;
-   padding: 15px;
    justify-self: center;
    align-content: center;
-   border: 3px solid #b6e3e3;
-   background-color: white;
-   border-radius: 10px;
-   box-shadow: 5px 5px 10px grey;
+   margin: 10px;
+   padding: 15px;
+   @extend %bordes-comunes;
 }
 .info{
    grid-area: inf;
+   padding-left: 40px;
    margin: 10px;
    padding: 20px;
-   padding-left: 40px;
-   border: 4px solid #b6e3e3;
-   background-color: white;
-   border-radius: 10px;
-   box-shadow: 5px 5px 10px grey;
+   @extend %bordes-comunes;
    p{
       margin: 0 15px 0 15px;
    }
@@ -46,38 +43,22 @@
 }
 .lic1{
    grid-area: lic1;
-   margin: 5%;
-   padding: 10px;
-   border: 4px solid #b6e3e3;
-   background-color: white;
-   border-radius: 10px;
-   text-align: center;
-   box-shadow: 5px 5px 10px grey;
+   @extend %lic-box;
 }
 .lic2{
    grid-area: lic2;
-   margin: 5%;
-   padding: 10px;
-   border: 4px solid #b6e3e3;
-   background-color: white;
-   border-radius: 10px;
-   text-align: center;
-   box-shadow: 5px 5px 10px grey;
+   @extend %lic-box;
 }
 .lic3{
    grid-area: lic3;
-   margin: 5%;
-   padding: 10px;
-   border: 4px solid #b6e3e3;
-   background-color: white;
-   border-radius: 10px;
-   text-align: center;
-   box-shadow: 5px 5px 10px grey;
+   @extend %lic-box;
 }
 .progress-stacked {
    margin: 25px 0 25px 0;
 }
 /*Colores para barras de progreso*/
-.colorv{ background-color: #4CAF50 !important;}
-.colorf{ background-color: #C13246 !important;}
-.colorp{ background-color: #FFB800 !important;}
+.colorv{ background-color: variables.$color-correcto !important;}
+.colorf{ background-color: variables.$color-incorrecto !important;}
+.colorp{ background-color: variables.$color-duda !important;}
+
+//TODO Hover sobre la barra que estés mirando

@@ -57,21 +57,19 @@
       "lic1"
       "lic2"
    }
-   div.foto{display: none;}
-   div.lic1{margin: 0 0 2.5% 0;}
-   div.lic2{margin: 2.5% 0 0 0;}
-   div.lic3{display: none;}
+   .info{margin: 0px;}
+   .foto{display: none;}
+   .lic1{margin: 0 5px 2.5% 5px;}
+   .lic2{margin: 2.5% 5px 0 5px;}
+   .lic3{display: none;}
 }
 
 @media (max-width: 500px){ /*Titulo en telefono menores a 430px*/
    h1{
       font-size: 2rem;
    }
-      .txt2 {
-      width: 325px;
-   }
-   .txt {
-      width: 325px;
+   .txt2 {
+      width: 300px;
    }
    .Privado nav ul {
       flex-direction: column;   
@@ -82,3 +80,4 @@
       }
    }
 }
+

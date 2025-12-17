@@ -42,7 +42,6 @@ header nav ul li a:hover {
   background-color: #b9feff;
 }
 
-/*Body*/
 body { /*CORRECCION DE BOOTSTRAP (Lo destesto) */
   all: revert !important;
   background-color: #e9f2f8 !important;
@@ -59,13 +58,11 @@ footer nav {
   display: flex;
   justify-content: center;
 }
-
 footer nav ul {
   display: flex;
   column-gap: 20px;
   list-style: none;
 }
-
 footer nav ul li a {
   text-decoration: none;
   color: #2C3E50;
@@ -74,9 +71,8 @@ footer nav ul li a {
   background-color: #e9f2f8;
   border-radius: 3px;
   transition: background-color 0.3s, color 0.3s; /* animación suave */
-  transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s; /* animación suave */
 }
-
 footer nav ul li a:hover {
   color: white;
   border: 2px solid #2C3E50;
@@ -97,6 +93,7 @@ footer nav ul li a:hover {
   border: 2px #2C3E50;
   border-radius: 12px;
   box-shadow: 5px 5px 10px grey;
+  width: 425px;
 }
 
 .Privado {
@@ -174,6 +171,23 @@ footer nav ul li a:hover {
   box-shadow: 5px 5px 10px grey;
 }
 
+.foto, .info {
+  border: 2px solid #9be6e7;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px grey;
+}
+
+.lic1, .lic2, .lic3 {
+  margin: 5%;
+  padding: 10px;
+  border: 2px solid #9be6e7;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 10px grey;
+}
+
 .perfil {
   display: grid;
   justify-content: center;
@@ -189,25 +203,17 @@ footer nav ul li a:hover {
 
 .foto {
   grid-area: foto;
-  margin: 10px;
-  padding: 15px;
   justify-self: center;
   align-content: center;
-  border: 3px solid #b6e3e3;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px grey;
+  margin: 10px;
+  padding: 15px;
 }
 
 .info {
   grid-area: inf;
+  padding-left: 40px;
   margin: 10px;
   padding: 20px;
-  padding-left: 40px;
-  border: 4px solid #b6e3e3;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px grey;
 }
 .info p {
   margin: 0 15px 0 15px;
@@ -222,35 +228,14 @@ footer nav ul li a:hover {
 
 .lic1 {
   grid-area: lic1;
-  margin: 5%;
-  padding: 10px;
-  border: 4px solid #b6e3e3;
-  background-color: white;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 10px grey;
 }
 
 .lic2 {
   grid-area: lic2;
-  margin: 5%;
-  padding: 10px;
-  border: 4px solid #b6e3e3;
-  background-color: white;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 10px grey;
 }
 
 .lic3 {
   grid-area: lic3;
-  margin: 5%;
-  padding: 10px;
-  border: 4px solid #b6e3e3;
-  background-color: white;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 5px 5px 10px grey;
 }
 
 .progress-stacked {
@@ -263,7 +248,7 @@ footer nav ul li a:hover {
 }
 
 .colorf {
-  background-color: #C13246 !important;
+  background-color: #af4c4c !important;
 }
 
 .colorp {
@@ -290,43 +275,32 @@ footer nav ul li a:hover {
   padding: 12px 16px;
   border-radius: 12px;
   margin-bottom: 12px;
-  cursor: pointer;
+  cursor: pointer; /*Mouse como manito*/
   transition: 0.25s ease;
-  background: white;
+  background: white; /*Fondo interno*/
 }
-
-/* Ocultar radio */
-.preguntas-opciones input[type=radio] {
+.preguntas-opciones input[type=radio] { /* Ocultar radio */
   display: none;
 }
-
-/* Estilo al pasar el mouse */
-.preguntas-opciones:hover {
+.preguntas-opciones:hover { /* Estilo al pasar el mouse */
   background: #e4f7ff;
   border-color: #9be6e7;
   transform: translateY(-2px);
 }
-
-/* Cuando la opción está seleccionada */
-.preguntas-opciones input[type=radio]:checked + span {
+.preguntas-opciones input[type=radio]:checked + span { /* Opción seleccionada correcta */
   font-weight: bold;
   color: #4CAF50;
 }
-
 .preguntas-opciones input[type=radio]:checked + span::before {
   content: "✔ ";
-  font-weight: bold;
   color: #4CAF50;
 }
-
-.preguntas-opciones-f input[type=radio]:checked + span {
+.preguntas-opciones-f input[type=radio]:checked + span { /* Opción seleccionada Incorrecta */
   font-weight: bold;
   color: #af4c4c;
 }
-
-.preguntas-opciones-f input[type=radio]:checked + span::before {
+.preguntas-opciones-f input[type=radio]:checked + span:before {
   content: "x ";
-  font-weight: bold;
   color: #af4c4c;
   font-size: 1.15em;
 }
@@ -385,16 +359,19 @@ footer nav ul li a:hover {
     grid-template-columns: repeat(1, 2fr);
     grid-template-areas: "inf" "tit" "lic1" "lic2";
   }
-  div.foto {
+  .info {
+    margin: 0px;
+  }
+  .foto {
     display: none;
   }
-  div.lic1 {
-    margin: 0 0 2.5% 0;
+  .lic1 {
+    margin: 0 5px 2.5% 5px;
   }
-  div.lic2 {
-    margin: 2.5% 0 0 0;
+  .lic2 {
+    margin: 2.5% 5px 0 5px;
   }
-  div.lic3 {
+  .lic3 {
     display: none;
   }
 }
@@ -403,10 +380,7 @@ footer nav ul li a:hover {
     font-size: 2rem;
   }
   .txt2 {
-    width: 325px;
-  }
-  .txt {
-    width: 325px;
+    width: 300px;
   }
   .Privado nav ul {
     flex-direction: column;

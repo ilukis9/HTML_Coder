@@ -1,9 +1,10 @@
-/*Body*/
+@use "../util/variables";
+
 body{ /*CORRECCION DE BOOTSTRAP (Lo destesto) */
    all: revert !important;
-   background-color: #e9f2f8 !important;
+   background-color: variables.$color-fondo !important;
    font-family: "Lexend", sans-serif !important;
-   color: #2C3E50 !important;
+   color: variables.$color-texto !important;
 }
 .titulos h2{
    font-size: 100px;

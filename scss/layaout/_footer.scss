@@ -1,27 +1,30 @@
+@use "../util/variables";
+
 /*Footer de todas las paginas*/
 footer nav {
    display: flex;
    justify-content: center;
+      ul{
+      display: flex;
+      column-gap: 20px;
+      list-style: none;
+         li a{
+         text-decoration: none;
+         color: variables.$color-texto;
+         border: 2px solid variables.$color-fondo; 
+         padding: 4px 8px; 
+         background-color: variables.$color-fondo; 
+         border-radius: 3px;  
+         transition: background-color 0.3s, color 0.3s;     /* animación suave */
+         transition: border-color 0.3s, color 0.3s;         /* animación suave */
+            &:hover{
+            color: white;
+            border: 2px solid variables.$color-texto; 
+            padding: 4px 8px; 
+            background-color: variables.$color-texto;  
+            border-radius: 4px;  
+         }
+      }
+   }
 }
-footer nav ul{
-   display: flex;
-   column-gap: 20px;
-   list-style: none;
-}
-footer nav ul li a{
-   text-decoration: none;
-   color: #2C3E50;
-   border: 2px solid #e9f2f8; 
-   padding: 4px 8px; 
-   background-color: #e9f2f8; 
-   border-radius: 3px;  
-   transition: background-color 0.3s, color 0.3s; /* animación suave */
-   transition: border-color 0.3s, color 0.3s;
-}
-footer nav ul li a:hover{
-   color: white;
-   border: 2px solid #2C3E50; 
-   padding: 4px 8px; 
-   background-color: #2C3E50;  
-   border-radius: 4px;  
-}
+
