@@ -1,4 +1,4 @@
-@use "../util/variables";
+@use "../util/variables" as v;
 
 /*index*/
 .txt{
@@ -10,5 +10,5 @@
    width: 425px;
    margin: 1rem 0;
    border-radius: 12px;
-   box-shadow: 5px 5px 10px variables.$color-sombras;
+   box-shadow: 5px 5px 10px v.$color-sombras;
 }

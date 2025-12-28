@@ -1,4 +1,4 @@
-@use "../util/variables";
+@use "../util/variables" as v;
 
 /*Footer de todas las paginas*/
 footer nav {
@@ -10,18 +10,18 @@ footer nav {
       list-style: none;
          li a{
          text-decoration: none;
-         color: variables.$color-texto;
-         border: 2px solid variables.$color-fondo; 
+         color: v.$color-text;
+         border: 2px solid v.$color-fondo; 
          padding: 4px 8px; 
-         background-color: variables.$color-fondo; 
+         background-color: v.$color-fondo; 
          border-radius: 3px;  
          transition: background-color 0.3s, color 0.3s;     /* animación suave */
          transition: border-color 0.3s, color 0.3s;         /* animación suave */
             &:hover{
             color: white;
-            border: 2px solid variables.$color-texto; 
+            border: 2px solid v.$color-text; 
             padding: 4px 8px; 
-            background-color: variables.$color-texto;  
+            background-color: v.$color-text;  
             border-radius: 4px;  
          }
       }

@@ -1,4 +1,5 @@
 @use "../util/variables" as v;
+@use "../util/mixin" as m;
 
 // 2. Estilos Globales
 * {
@@ -6,36 +7,33 @@
 }
 
 .init {
-  min-height: calc(100vh - 150px);
+  min-height: 80vh;
   margin: 0;
   display: grid;
   place-items: center;
 
   h2, h3 {
     margin: 0;
+    text-align: center;
   }
 }
 
-// 3. Componente Card
 .card {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  background: white; //Fondo
   border-radius: 16px;
   padding: 6px;
-  width: 90vw;
-  max-width: 800px;
-  box-shadow: 0px 20px 54px rgba(126, 48, 255, 0.12);
+  width: 90vw; //Espacio en pantalla
+  max-width: 800px; //Tamaño de caja
+  box-shadow: 0px 20px 54px rgba(126, 48, 255, 0.12); //sombreado de caja
 
   // Imagen principal de la derecha
-  img {
-    width: 50%;
-    border-radius: 14px;
-    align-self: stretch;
-    object-fit: cover;
-    transition: 0.3s;
-    &.der{
+  img{
+    &.der{ 
+      align-self: stretch; //Ocupa el tamaño completo de la caja de forma vertical
+      object-fit: cover; //Cortado de foto para que entre esteticamente
+      width: 50%; //Ocupando mitad de caja
       margin: 10px;
       border-radius: 7px;
     }
@@ -48,7 +46,10 @@
     transition: width 0.3s;
 
     img {
-      height: 40px;
+      align-self: stretch; //Ocupa el tamaño completo de la caja de forma vertical
+      object-fit: cover; //Cortado de foto para que entre esteticamente
+      height: 50px;
+      width: 175px;
       margin-bottom: 20px;
     }
 
@@ -80,37 +81,45 @@
         }
       }
 
-      .row {
+      .row { //Recueda y Olvidaste
         display: flex;
-        align-items: center;
+        text-align: center;
         justify-content: space-between;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin: 20px 0 40px;
 
         a {
           color: v.$color-muted;
           font-size: 14px;
           white-space: nowrap;
+          margin-top: 7px;
+          cursor: pointer;
+          &:hover { text-decoration: underline; }
         }
       }
 
-      button {
-        color: v.$color-texto;
-        background: v.$color-prim;
-        border: 0;
+      .butt {
+        text-decoration: none;
+        display: flex;             //Centrar el texto
+        align-items: center;       // Centra verticalmente
+        justify-content: center;    // Centra horizontalmente
+        height: 48px;              
         padding: 0 48px;
-        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;          // Opcional, para que resalte más
+        @include m.botones(100%, 6px) //Boton oscuro estandar
       }
     }
 
-    p {
+    p { // No tenes cuenta? 
       font-size: 14px;
       margin-top: 30px;
       color: v.$color-muted;
+      text-align: center;
 
-      a {
+      a { // Crear cuenta
         color: v.$color-prim;
         text-decoration: none;
+        cursor: pointer;
         &:hover { text-decoration: underline; }
       }
     }
@@ -130,6 +139,7 @@
 .checkbox {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 14px;
   white-space: nowrap;
@@ -141,8 +151,8 @@
     scale: 0;
 
     &:checked ~ .check {
-      border-color: v.$color-prim;
-      background: v.$color-prim;
+      border-color: v.$color-text;
+      background: v.$color-text;
     }
   }
 

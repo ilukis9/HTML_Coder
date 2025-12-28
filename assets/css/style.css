@@ -121,7 +121,6 @@ footer nav ul li a:hover {
 .Privado p {
   padding: 10px 5% 10px 5%;
   font-size: small;
-  font-size: small;
 }
 .Privado nav ul { /*Forma y color de botones*/
   font-size: 15px;
@@ -133,21 +132,25 @@ footer nav ul li a:hover {
 }
 .Privado nav ul li a { /*Forma y color de botones*/
   text-decoration: none;
-  color: white; /*Letras*/
-  border: 2px solid #2C3E50;
   padding: 8px 8px;
-  background-color: #2C3E50;
-  border-radius: 6px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 125px; /*mismo ancho*/
+  width: 130px;
   text-align: center; /*Centrado en boton*/
+  color: white; /*Letras*/
+  border-radius: 6px;
+  border: 2px solid #2C3E50;
+  background-color: #2C3E50;
+  cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* animación suave */
 }
 .Privado nav ul li a:hover { /*Cambio fondo al pasar el mouse*/
   background-color: white;
   color: #2C3E50;
+}
+.Privado nav ul li a:active {
+  transform: scale(0.98);
 }
 
 .mi1 h2 {
@@ -343,34 +346,30 @@ footer nav ul li a:hover {
 }
 
 .init {
-  min-height: calc(100vh - 150px);
+  min-height: 80vh;
   margin: 0;
   display: grid;
   place-items: center;
 }
 .init h2, .init h3 {
   margin: 0;
+  text-align: center;
 }
 
 .card {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  background: white;
   border-radius: 16px;
   padding: 6px;
   width: 90vw;
   max-width: 800px;
   box-shadow: 0px 20px 54px rgba(126, 48, 255, 0.12);
 }
-.card img {
-  width: 50%;
-  border-radius: 14px;
+.card img.der {
   align-self: stretch;
   object-fit: cover;
-  transition: 0.3s;
-}
-.card img.der {
+  width: 50%;
   margin: 10px;
   border-radius: 7px;
 }
@@ -380,7 +379,10 @@ footer nav ul li a:hover {
   transition: width 0.3s;
 }
 .card .content img {
-  height: 40px;
+  align-self: stretch;
+  object-fit: cover;
+  height: 50px;
+  width: 175px;
   margin-bottom: 20px;
 }
 .card .content h2 {
@@ -410,31 +412,55 @@ footer nav ul li a:hover {
 }
 .card .content form .row {
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: space-between;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 20px 0 40px;
 }
 .card .content form .row a {
   color: #b4b4b4;
   font-size: 14px;
   white-space: nowrap;
-}
-.card .content form button {
-  color: #2C3E50;
-  background: #9be6e7;
-  border: 0;
-  padding: 0 48px;
+  margin-top: 7px;
   cursor: pointer;
+}
+.card .content form .row a:hover {
+  text-decoration: underline;
+}
+.card .content form .butt {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 48px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center; /*Centrado en boton*/
+  color: white; /*Letras*/
+  border-radius: 6px;
+  border: 2px solid #2C3E50;
+  background-color: #2C3E50;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* animación suave */
+}
+.card .content form .butt:hover { /*Cambio fondo al pasar el mouse*/
+  background-color: white;
+  color: #2C3E50;
+}
+.card .content form .butt:active {
+  transform: scale(0.98);
 }
 .card .content p {
   font-size: 14px;
   margin-top: 30px;
   color: #b4b4b4;
+  text-align: center;
 }
 .card .content p a {
   color: #9be6e7;
   text-decoration: none;
+  cursor: pointer;
 }
 .card .content p a:hover {
   text-decoration: underline;
@@ -452,6 +478,7 @@ footer nav ul li a:hover {
 .checkbox {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-size: 14px;
   white-space: nowrap;
@@ -463,8 +490,8 @@ footer nav ul li a:hover {
   scale: 0;
 }
 .checkbox input:checked ~ .check {
-  border-color: #9be6e7;
-  background: #9be6e7;
+  border-color: #2C3E50;
+  background: #2C3E50;
 }
 .checkbox .check {
   position: relative;
@@ -521,7 +548,12 @@ footer nav ul li a:hover {
     display: none;
   }
 }
-@media (max-width: 770px) { /*Telefono*/
+@media (max-width: 760px) { /*Telefono*/
+  h1 {
+    font-size: 2.5rem;
+    margin: 0px auto;
+    justify-items: center;
+  }
   .txt2 {
     width: 375px;
   }
@@ -534,11 +566,6 @@ footer nav ul li a:hover {
   }
   .menu {
     display: none;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin: 0px auto;
-    justify-items: center;
   }
   .perfil {
     grid-template-columns: repeat(1, 2fr);
@@ -559,8 +586,23 @@ footer nav ul li a:hover {
   .lic3 {
     display: none;
   }
+  .card {
+    flex-direction: column-reverse;
+  }
+  .card img {
+    width: 40%;
+  }
+  .card img.der {
+    display: none;
+  }
+  .card img form {
+    width: 100%;
+  }
+  .card .content {
+    width: 100%;
+  }
 }
-@media (max-width: 500px) { /*Titulo en telefono menores a 430px*/
+@media (max-width: 540px) { /*Titulo en telefono menores a 430px*/
   h1 {
     font-size: 2rem;
   }
@@ -575,54 +617,35 @@ footer nav ul li a:hover {
   .Privado nav ul li a {
     width: 175px;
   }
+  .card {
+    flex-direction: column-reverse;
+  }
+  .card img {
+    width: 100%;
+    height: 200px;
+    transition: none;
+  }
+  .card form {
+    width: 100%;
+  }
+  .card .content {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: none;
+  }
+  .card .content h3, .card .content h2 {
+    display: none;
+  }
+  .card .content img {
+    height: 50px;
+    width: 175px;
+  }
+  .init form button {
+    width: 100%;
+  }
 }
-/* @media (width <= 700px) {
-.card > img {
-   width: 40%;
-}
-
-.content {
-   width: 60%;
-}
-}
-
-@media (width <= 596px) {
-.card {
-   padding: 24px 24px 0;
-   flex-direction: column-reverse;
-}
-
-.card > img {
-   width: 100%;
-   height: 200px;
-   transition: none;
-}
-
-.content > h2,
-.content > h3 {
-   display: none;
-}
-
-.card form {
-   width: 100%;
-}
-
-.content {
-   padding-inline: 0;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   transition: none;
-}
-
-.init form button {
-   width: 100%;
-}
-
-.content > img {
-   height: 28px;
-}
-} */
 
 /*# sourceMappingURL=style.css.map */
