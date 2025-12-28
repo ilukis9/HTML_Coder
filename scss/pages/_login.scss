@@ -1,196 +1,176 @@
 @use "../util/variables" as v;
 
-/* Reset 
+// 2. Estilos Globales
 * {
   box-sizing: border-box;
-}*/
+}
 
-/* Layout base */
-
-main.init {
-  min-height: calc(100vh - 210px);
+.init {
+  min-height: calc(100vh - 150px);
+  margin: 0;
   display: grid;
   place-items: center;
-  background: v.$color-fondo;
-  color: v.$color-texto;
-  overflow: hidden;
-  margin: 0;
-    h2 {
+
+  h2, h3 {
     margin: 0;
-    font-weight: 500;
   }
 }
 
-/* Card */
+// 3. Componente Card
 .card {
-  overflow: hidden;
-  width: 700px;
-  height: 480px;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  background: #ffffff;
   border-radius: 16px;
-  background: v.$white;
-  box-shadow: v.$shadow-card;
+  padding: 6px;
+  width: 90vw;
+  max-width: 800px;
+  box-shadow: 0px 20px 54px rgba(126, 48, 255, 0.12);
 
-  &-bg {
-    position: absolute;
-    z-index: 2;
-    inset: 0;
+  // Imagen principal de la derecha
+  img {
     width: 50%;
-    background: v.$gradient;
-    translate: 0 0;
-    transition: 0.5s ease-in-out;
-
-    &.signin {
-      translate: 100% 0;
-    }
-  }
-}
-
-/* Hero & Form (base) */
-.hero,
-.form {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s ease-in-out;
-
-  &.active {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-/* Hero */
-.hero {
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  color: v.$color-texto;
-  text-align: center;
-  padding: 0 24px;
-
-  p {
-    margin: 0 0 6px;
-    opacity: 0.75;
-    line-height: 1.45;
-  }
-
-  button {
-    padding: 12px 40px;
-    border-radius: 32px;
-    letter-spacing: 1px;
-    color: inherit;
-    border: 1px solid v.$color-texto;
-    background: transparent;
+    border-radius: 14px;
+    align-self: stretch;
+    object-fit: cover;
     transition: 0.3s;
-    cursor: pointer;
-
-    &:hover {
-      color: v.$color-fondoint;
-      background: v.$color-texto;
+    &.der{
+      margin: 10px;
+      border-radius: 7px;
     }
   }
 
-  &.signin {
-    left: 50%;
-    translate: 25% 0;
+  // Contenedor de texto y formulario
+  .content {
+    padding: 32px;
+    width: 50%;
+    transition: width 0.3s;
 
-    &.active {
-      translate: 0;
+    img {
+      height: 40px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin: 10px 0; 
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 16px;
+      color: v.$color-muted;
+      margin: 15px 0;
+    }
+
+    form {
+      padding: 0;
+
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        margin: 15px 0;
+        color: inherit;
+        border: 1px solid v.$color-border;
+        background: transparent;
+
+        &::placeholder {
+          color: v.$color-muted;
+        }
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        a {
+          color: v.$color-muted;
+          font-size: 14px;
+          white-space: nowrap;
+        }
+      }
+
+      button {
+        color: v.$color-texto;
+        background: v.$color-prim;
+        border: 0;
+        padding: 0 48px;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 30px;
+      color: v.$color-muted;
+
+      a {
+        color: v.$color-prim;
+        text-decoration: none;
+        &:hover { text-decoration: underline; }
+      }
     }
   }
-
-  &.signup {
-    translate: -25% 0;
-
-    &.active {
-      translate: 0;
-    }
+  input, button {
+    font-size: 16px;
+    font-family: inherit;
+    display: block;
+    padding: 0 16px;
+    border-radius: 6px;
+    height: 48px;
+    outline-color: v.$color-prim;
   }
 }
 
-/* Form */
-.form {
-  background: v.$white;
-  z-index: 1;
+// 4. Custom Checkbox
+.checkbox {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 16px;
-  padding: 32px;
-
-  h2 {
-    font-size: 22px;
-    text-align: center;
-  }
-
-  p {
-    margin: 0 0 -8px;
-    text-align: center;
-    opacity: 0.5;
-    font-size: 12px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-
-    > a {
-      font-size: 14px;
-      margin-top: 10px;
-      opacity: 0.5;
-    }
-  }
+  gap: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  color: v.$color-muted;
+  cursor: pointer;
 
   input {
-    border-radius: 10px;
-    border: 0;
-    background: v.$input-bg;
-    padding: 14px 12px;
-    color: inherit;
-    width: 100%;
+    position: absolute;
+    scale: 0;
 
-    &::placeholder {
-      color: v.$placeholder;
+    &:checked ~ .check {
+      border-color: v.$color-prim;
+      background: v.$color-prim;
     }
   }
 
-  button {
-    border: 0;
-    padding: 14px 0;
-    border-radius: 32px;
-    color: v.$color-texto;
-    width: 160px;
-    margin-top: 10px;
-    background: v.$gradient;
-    box-shadow: v.$shadow-btn;
-    &:hover{
-      color: v.$color-fondoint;
+  .check {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid v.$color-border;
+    transition: 0.3s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      rotate: 45deg;
+      border-bottom: 2px solid #ffffff;
+      border-right: 2px solid #ffffff;
+      // Centrado simple para el check
+      width: 5px;
+      height: 10px;
+      left: 6px;
+      top: 2px;
     }
   }
 
-  &.signin {
-    translate: 50% 0;
-
-    &.active {
-      translate: 0;
-    }
-  }
-
-  &.signup {
-    left: 50%;
-    translate: -50% 0;
-
-    &.active {
-      translate: 0;
-    }
+  &:has(input:checked) {
+    color: #7e7e7e;
   }
 }
+

@@ -338,177 +338,156 @@ footer nav ul li a:hover {
   font-size: 1.15em;
 }
 
-/* Reset 
 * {
   box-sizing: border-box;
-}*/
-/* Layout base */
-main.init {
-  min-height: calc(100vh - 210px);
+}
+
+.init {
+  min-height: calc(100vh - 150px);
+  margin: 0;
   display: grid;
   place-items: center;
-  background: #e9f2f8;
-  color: #2C3E50;
-  overflow: hidden;
-  margin: 0;
 }
-main.init h2 {
+.init h2, .init h3 {
   margin: 0;
-  font-weight: 500;
 }
 
-/* Card */
 .card {
-  overflow: hidden;
-  width: 700px;
-  height: 480px;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 12px 80px rgba(128, 128, 128, 0.25);
-}
-.card-bg {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  width: 50%;
-  background: linear-gradient(90deg, #9be6e7, #9be6e7);
-  translate: 0 0;
-  transition: 0.5s ease-in-out;
-}
-.card-bg.signin {
-  translate: 100% 0;
-}
-
-/* Hero & Form (base) */
-.hero,
-.form {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s ease-in-out;
-}
-.hero.active,
-.form.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Hero */
-.hero {
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: row !important;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  color: #2C3E50;
-  text-align: center;
-  padding: 0 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 6px;
+  width: 90vw;
+  max-width: 800px;
+  box-shadow: 0px 20px 54px rgba(126, 48, 255, 0.12);
 }
-.hero p {
-  margin: 0 0 6px;
-  opacity: 0.75;
-  line-height: 1.45;
-}
-.hero button {
-  padding: 12px 40px;
-  border-radius: 32px;
-  letter-spacing: 1px;
-  color: inherit;
-  border: 1px solid #2C3E50;
-  background: transparent;
+.card img {
+  width: 50%;
+  border-radius: 14px;
+  align-self: stretch;
+  object-fit: cover;
   transition: 0.3s;
+}
+.card img.der {
+  margin: 10px;
+  border-radius: 7px;
+}
+.card .content {
+  padding: 32px;
+  width: 50%;
+  transition: width 0.3s;
+}
+.card .content img {
+  height: 40px;
+  margin-bottom: 20px;
+}
+.card .content h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+.card .content h3 {
+  font-weight: 400;
+  font-size: 16px;
+  color: #b4b4b4;
+  margin: 15px 0;
+}
+.card .content form {
+  padding: 0;
+}
+.card .content form input[type=email],
+.card .content form input[type=password] {
+  width: 100%;
+  margin: 15px 0;
+  color: inherit;
+  border: 1px solid #a9a9a9;
+  background: transparent;
+}
+.card .content form input[type=email]::placeholder,
+.card .content form input[type=password]::placeholder {
+  color: #b4b4b4;
+}
+.card .content form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.card .content form .row a {
+  color: #b4b4b4;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.card .content form button {
+  color: #2C3E50;
+  background: #9be6e7;
+  border: 0;
+  padding: 0 48px;
   cursor: pointer;
 }
-.hero button:hover {
-  color: white;
-  background: #2C3E50;
+.card .content p {
+  font-size: 14px;
+  margin-top: 30px;
+  color: #b4b4b4;
 }
-.hero.signin {
-  left: 50%;
-  translate: 25% 0;
+.card .content p a {
+  color: #9be6e7;
+  text-decoration: none;
 }
-.hero.signin.active {
-  translate: 0;
+.card .content p a:hover {
+  text-decoration: underline;
 }
-.hero.signup {
-  translate: -25% 0;
-}
-.hero.signup.active {
-  translate: 0;
+.card input, .card button {
+  font-size: 16px;
+  font-family: inherit;
+  display: block;
+  padding: 0 16px;
+  border-radius: 6px;
+  height: 48px;
+  outline-color: #9be6e7;
 }
 
-/* Form */
-.form {
-  background: #ffffff;
-  z-index: 1;
+.checkbox {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 16px;
-  padding: 32px;
-}
-.form h2 {
-  font-size: 22px;
-  text-align: center;
-}
-.form p {
-  margin: 0 0 -8px;
-  text-align: center;
-  opacity: 0.5;
-  font-size: 12px;
-}
-.form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-}
-.form form > a {
+  gap: 8px;
   font-size: 14px;
-  margin-top: 10px;
-  opacity: 0.5;
+  white-space: nowrap;
+  color: #b4b4b4;
+  cursor: pointer;
 }
-.form input {
-  border-radius: 10px;
-  border: 0;
-  background: #eef0f7;
-  padding: 14px 12px;
-  color: inherit;
-  width: 100%;
+.checkbox input {
+  position: absolute;
+  scale: 0;
 }
-.form input::placeholder {
-  color: #a0a2b6;
+.checkbox input:checked ~ .check {
+  border-color: #9be6e7;
+  background: #9be6e7;
 }
-.form button {
-  border: 0;
-  padding: 14px 0;
-  border-radius: 32px;
-  color: #2C3E50;
-  width: 160px;
-  margin-top: 10px;
-  background: linear-gradient(90deg, #9be6e7, #9be6e7);
-  box-shadow: 0 10px 40px rgba(128, 128, 128, 0.44);
+.checkbox .check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: transparent;
+  border: 1px solid #a9a9a9;
+  transition: 0.3s;
 }
-.form button:hover {
-  color: white;
+.checkbox .check::after {
+  content: "";
+  position: absolute;
+  rotate: 45deg;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  width: 5px;
+  height: 10px;
+  left: 6px;
+  top: 2px;
 }
-.form.signin {
-  translate: 50% 0;
-}
-.form.signin.active {
-  translate: 0;
-}
-.form.signup {
-  left: 50%;
-  translate: -50% 0;
-}
-.form.signup.active {
-  translate: 0;
+.checkbox:has(input:checked) {
+  color: #7e7e7e;
 }
 
 /*Cambios de tamaño de Pantallas DF*/
@@ -597,5 +576,53 @@ main.init h2 {
     width: 175px;
   }
 }
+/* @media (width <= 700px) {
+.card > img {
+   width: 40%;
+}
+
+.content {
+   width: 60%;
+}
+}
+
+@media (width <= 596px) {
+.card {
+   padding: 24px 24px 0;
+   flex-direction: column-reverse;
+}
+
+.card > img {
+   width: 100%;
+   height: 200px;
+   transition: none;
+}
+
+.content > h2,
+.content > h3 {
+   display: none;
+}
+
+.card form {
+   width: 100%;
+}
+
+.content {
+   padding-inline: 0;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: none;
+}
+
+.init form button {
+   width: 100%;
+}
+
+.content > img {
+   height: 28px;
+}
+} */
 
 /*# sourceMappingURL=style.css.map */

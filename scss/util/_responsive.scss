@@ -81,3 +81,51 @@
    }
 }
 
+/* @media (width <= 700px) {
+.card > img {
+   width: 40%;
+}
+
+.content {
+   width: 60%;
+}
+}
+
+@media (width <= 596px) {
+.card {
+   padding: 24px 24px 0;
+   flex-direction: column-reverse;
+}
+
+.card > img {
+   width: 100%;
+   height: 200px;
+   transition: none;
+}
+
+.content > h2,
+.content > h3 {
+   display: none;
+}
+
+.card form {
+   width: 100%;
+}
+
+.content {
+   padding-inline: 0;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: none;
+}
+
+.init form button {
+   width: 100%;
+}
+
+.content > img {
+   height: 28px;
+}
+} */
