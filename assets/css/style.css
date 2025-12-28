@@ -12,6 +12,7 @@ header {
   background-color: #9be6e7;
   padding: 10px 50px 10px 30px;
   border-radius: 10px;
+  margin: 10px;
 }
 header.no-bootstrap {
   align-content: center;
@@ -43,7 +44,7 @@ header nav ul li a:hover {
 }
 
 body { /*CORRECCION DE BOOTSTRAP (Lo destesto) */
-  all: revert !important;
+  margin: 0;
   background-color: #e9f2f8 !important;
   font-family: "Lexend", sans-serif !important;
   color: #2C3E50 !important;
@@ -89,10 +90,10 @@ footer nav ul li a:hover {
 }
 
 .txt2 {
+  width: 425px;
   margin: 1rem 0;
   border-radius: 12px;
   box-shadow: 5px 5px 10px grey;
-  width: 425px;
 }
 
 .Privado {
@@ -166,7 +167,7 @@ footer nav ul li a:hover {
   box-shadow: 5px 5px 10px grey;
 }
 
-.foto, .info {
+.info, .foto {
   border: 2px solid #9be6e7;
   background-color: white;
   border-radius: 12px;
@@ -181,12 +182,15 @@ footer nav ul li a:hover {
   border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 10px grey;
+  display: grid;
+  grid-template-rows: minmax(48px, auto) auto 1fr; /* texto inferior */
+  gap: 12px;
 }
 
 .perfil {
   display: grid;
   justify-content: center;
-  grid-template-rows: 3fr 1fr 3fr;
+  grid-template-rows: 2.1fr 0.5fr 2fr;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "inf inf foto" "tit tit tit" "lic1 lic2 lic3";
 }
@@ -194,14 +198,6 @@ footer nav ul li a:hover {
   justify-self: center;
   font-size: 20px;
   margin: 5px;
-}
-
-.foto {
-  grid-area: foto;
-  justify-self: center;
-  align-content: center;
-  margin: 10px;
-  padding: 15px;
 }
 
 .info {
@@ -213,8 +209,44 @@ footer nav ul li a:hover {
 .info h2 {
   font-size: 25px;
 }
-.info p {
-  margin: 10px 15px 0 15px;
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  max-width: 900px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+.campo label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.campo input {
+  padding: 8px 10px;
+  border: 1px solid #cfd8dc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.campo input:disabled {
+  background-color: #eceff1;
+}
+
+.foto {
+  grid-area: foto;
+  margin: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.foto-perfil {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 .titulo {
@@ -236,6 +268,9 @@ footer nav ul li a:hover {
   grid-area: lic3;
 }
 
+.progress:hover .progress-bar {
+  filter: brightness(1.25);
+}
 .progress-stacked {
   margin: 25px 0 25px 0;
 }
@@ -301,6 +336,179 @@ footer nav ul li a:hover {
   content: "x ";
   color: #af4c4c;
   font-size: 1.15em;
+}
+
+/* Reset 
+* {
+  box-sizing: border-box;
+}*/
+/* Layout base */
+main.init {
+  min-height: calc(100vh - 210px);
+  display: grid;
+  place-items: center;
+  background: #e9f2f8;
+  color: #2C3E50;
+  overflow: hidden;
+  margin: 0;
+}
+main.init h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Card */
+.card {
+  overflow: hidden;
+  width: 700px;
+  height: 480px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 80px rgba(128, 128, 128, 0.25);
+}
+.card-bg {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 50%;
+  background: linear-gradient(90deg, #9be6e7, #9be6e7);
+  translate: 0 0;
+  transition: 0.5s ease-in-out;
+}
+.card-bg.signin {
+  translate: 100% 0;
+}
+
+/* Hero & Form (base) */
+.hero,
+.form {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease-in-out;
+}
+.hero.active,
+.form.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hero */
+.hero {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #2C3E50;
+  text-align: center;
+  padding: 0 24px;
+}
+.hero p {
+  margin: 0 0 6px;
+  opacity: 0.75;
+  line-height: 1.45;
+}
+.hero button {
+  padding: 12px 40px;
+  border-radius: 32px;
+  letter-spacing: 1px;
+  color: inherit;
+  border: 1px solid #2C3E50;
+  background: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.hero button:hover {
+  color: white;
+  background: #2C3E50;
+}
+.hero.signin {
+  left: 50%;
+  translate: 25% 0;
+}
+.hero.signin.active {
+  translate: 0;
+}
+.hero.signup {
+  translate: -25% 0;
+}
+.hero.signup.active {
+  translate: 0;
+}
+
+/* Form */
+.form {
+  background: #ffffff;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+}
+.form h2 {
+  font-size: 22px;
+  text-align: center;
+}
+.form p {
+  margin: 0 0 -8px;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 12px;
+}
+.form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.form form > a {
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+.form input {
+  border-radius: 10px;
+  border: 0;
+  background: #eef0f7;
+  padding: 14px 12px;
+  color: inherit;
+  width: 100%;
+}
+.form input::placeholder {
+  color: #a0a2b6;
+}
+.form button {
+  border: 0;
+  padding: 14px 0;
+  border-radius: 32px;
+  color: #2C3E50;
+  width: 160px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #9be6e7, #9be6e7);
+  box-shadow: 0 10px 40px rgba(128, 128, 128, 0.44);
+}
+.form button:hover {
+  color: white;
+}
+.form.signin {
+  translate: 50% 0;
+}
+.form.signin.active {
+  translate: 0;
+}
+.form.signup {
+  left: 50%;
+  translate: -50% 0;
+}
+.form.signup.active {
+  translate: 0;
 }
 
 /*Cambios de tamaño de Pantallas DF*/

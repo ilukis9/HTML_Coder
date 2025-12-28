@@ -4,7 +4,7 @@
 .perfil{
    display: grid;
    justify-content: center;
-   grid-template-rows: 3fr 1fr 3fr;
+   grid-template-rows: 2.1fr .5fr 2fr;
    grid-template-columns: repeat(3, 1fr);
    grid-template-areas: 
    "inf inf foto"
@@ -17,14 +17,7 @@
       margin: 5px;
    }
 }
-.foto{
-   grid-area: foto;
-   justify-self: center;
-   align-content: center;
-   margin: 10px;
-   padding: 15px;
-   @extend %bordes-comunes;
-}
+
 .info{
    grid-area: inf;
    padding-left: 40px;
@@ -34,10 +27,46 @@
    h2{
       font-size: 25px;
    }
-   p{
-      margin: 10px 15px 0 15px;
+}
+.form-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 16px 24px;
+   max-width: 900px;
+}
+
+.campo {
+   display: flex;
+   flex-direction: column;
+   label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 500;
+   }
+   input {
+      padding: 8px 10px;
+      border: 1px solid #cfd8dc;
+      border-radius: 4px;
+      font-size: 14px;
+      &:disabled {
+         background-color: #eceff1;
+      }
    }
 }
+
+.foto{
+   grid-area: foto;
+   margin: 10px;
+   @extend %bordes-comunes;
+   display: grid; //Centrado de foto
+   place-items: center; //Centrado de foto
+}
+.foto-perfil{ //Centrado de foto
+   display: block;
+   margin: 0 auto;
+   border-radius: 10px;
+}  
+
 .titulo{
    grid-area: tit;
    justify-self: center;
@@ -55,9 +84,15 @@
 .lic3{
    grid-area: lic3;
    @extend %lic-box;
+
 }
-.progress-stacked {
-   margin: 25px 0 25px 0;
+.progress{
+   &:hover .progress-bar {
+   filter: brightness(1.25);
+   } 
+   &-stacked {
+      margin: 25px 0 25px 0;
+   }
 }
 /*Colores para barras de progreso*/
 .colorv{ background-color: variables.$color-correcto !important;}

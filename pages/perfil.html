@@ -33,7 +33,7 @@
                     <a class="nav-link" href="./perfil.html">Perfil</a>
                 </li>
                 <li class="nav-item fw-bold">
-                    <a class="nav-link" href="./ppa.html">PPA</a>
+                    <a class="nav-link" href="./auth/logreg.html">Reg</a>
                 </li>
             </ul>
         </div>
@@ -44,20 +44,44 @@
 <main class="container my-4">
     <section class="perfil"> <!-- Contenido del perfil a la derecha de la foto -->
         <div class="foto">
-            <img src="../assets/img/Foto Perfil.webp" width="200"  alt="Foto Perfil">
+            <img src="../assets/img/Foto Perfil.webp" width="200" class="foto-perfil" alt="Foto Perfil">
         </div>
 
-        <div class="info">    
+        <section class="info">    
             <h2><u>Datos Basicos</u></h2> 
-            <p>
-                <b>Nombre y Apellido:</b> Lucas Pulido Bolletti<br>
-                <b>Email:</b> lpulido@soypiloto.app<br>
-                <b>Fecha de nacimiento:</b> 30/07/1998<br>
-                <b>Edad:</b> 27 <br>
-                <b>Estado:</b> Piloto Privado de Avión
-                
-            </p>
-        </div>
+            <form class="form-grid"> <!-- Grid interno de datos basicos -->
+
+                <div class="campo">
+                    <label>Nombre y Apellido</label>
+                    <input type="text" value="Lucas Pulido Bolletti" disabled>
+                </div>
+
+                <div class="campo">
+                    <label>Email</label>
+                    <input type="email" value="lucaspiludipiloto@hotmail.com" disabled>
+                </div>
+
+                <div class="campo">
+                    <label>Teléfono</label>
+                    <input type="tel" value="1140468206" disabled>
+                </div>
+
+                <div class="campo">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" value="1998-07-30" disabled>
+                </div>
+
+                <div class="campo">
+                    <label>DNI</label>
+                    <input type="text" value="41328076" disabled>
+                </div>
+
+                <div class="campo">
+                    <label>Rol</label>
+                    <input type="text" value="Piloto" disabled>
+                </div>
+            </form>
+        </section>
 
         <div class="titulo">
             <h2>Licencias Practicadas</h2>
@@ -112,7 +136,7 @@
                 <div class="progress" role="progressbar" aria-label="Segment two" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
                     <div class="progress-bar colorf"></div>
                 </div>
-                <div class="progress" role="progressbar" aria-label="Segment two" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 15%">
+                <div class="progress" role="progressbar" aria-label="Segment tree" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 15%">
                     <div class="progress-bar colorp"></div>
                 </div>
             </div>

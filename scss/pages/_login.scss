@@ -1,0 +1,196 @@
+@use "../util/variables" as v;
+
+/* Reset 
+* {
+  box-sizing: border-box;
+}*/
+
+/* Layout base */
+
+main.init {
+  min-height: calc(100vh - 210px);
+  display: grid;
+  place-items: center;
+  background: v.$color-fondo;
+  color: v.$color-texto;
+  overflow: hidden;
+  margin: 0;
+    h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+/* Card */
+.card {
+  overflow: hidden;
+  width: 700px;
+  height: 480px;
+  border-radius: 16px;
+  background: v.$white;
+  box-shadow: v.$shadow-card;
+
+  &-bg {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    width: 50%;
+    background: v.$gradient;
+    translate: 0 0;
+    transition: 0.5s ease-in-out;
+
+    &.signin {
+      translate: 100% 0;
+    }
+  }
+}
+
+/* Hero & Form (base) */
+.hero,
+.form {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Hero */
+.hero {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: v.$color-texto;
+  text-align: center;
+  padding: 0 24px;
+
+  p {
+    margin: 0 0 6px;
+    opacity: 0.75;
+    line-height: 1.45;
+  }
+
+  button {
+    padding: 12px 40px;
+    border-radius: 32px;
+    letter-spacing: 1px;
+    color: inherit;
+    border: 1px solid v.$color-texto;
+    background: transparent;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$color-fondoint;
+      background: v.$color-texto;
+    }
+  }
+
+  &.signin {
+    left: 50%;
+    translate: 25% 0;
+
+    &.active {
+      translate: 0;
+    }
+  }
+
+  &.signup {
+    translate: -25% 0;
+
+    &.active {
+      translate: 0;
+    }
+  }
+}
+
+/* Form */
+.form {
+  background: v.$white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+
+  h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  p {
+    margin: 0 0 -8px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 12px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+
+    > a {
+      font-size: 14px;
+      margin-top: 10px;
+      opacity: 0.5;
+    }
+  }
+
+  input {
+    border-radius: 10px;
+    border: 0;
+    background: v.$input-bg;
+    padding: 14px 12px;
+    color: inherit;
+    width: 100%;
+
+    &::placeholder {
+      color: v.$placeholder;
+    }
+  }
+
+  button {
+    border: 0;
+    padding: 14px 0;
+    border-radius: 32px;
+    color: v.$color-texto;
+    width: 160px;
+    margin-top: 10px;
+    background: v.$gradient;
+    box-shadow: v.$shadow-btn;
+    &:hover{
+      color: v.$color-fondoint;
+    }
+  }
+
+  &.signin {
+    translate: 50% 0;
+
+    &.active {
+      translate: 0;
+    }
+  }
+
+  &.signup {
+    left: 50%;
+    translate: -50% 0;
+
+    &.active {
+      translate: 0;
+    }
+  }
+}

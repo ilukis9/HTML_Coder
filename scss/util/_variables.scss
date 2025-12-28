@@ -1,10 +1,32 @@
+//* Variables personales
+
 $color-prim:#9be6e7;                //Header y Bordes
 $color-texto:#2C3E50;               //Textos y Bordes
 $color-fondo:#e9f2f8;               //Fondo de la pagina
 $color-fondoint:white;              //Fondos internos
 $color-sombras:grey;                //Sombras
 $color-hoberppa:#e4f7ff;            //Hobers
+$c-hobheader: #b9feff;              //Hober Header
 $color-correcto:#4CAF50;            //Eleccion de correcto 
 $color-incorrecto:#af4c4c;          //Eleccion de Incorrectos
 $color-duda:#FFB800;                //Dudas
 
+//* Variables de Login
+
+$white: #ffffff;
+$input-bg: #eef0f7;
+$placeholder: #a0a2b6;
+$shadow-card: 0 12px 80px rgba(128, 128, 128, 0.25);
+$shadow-btn: 0 10px 40px rgba(128, 128, 128, 0.44);
+$gradient: linear-gradient(90deg, #9be6e7, #9be6e7);
+
+
+//$bg-init: #f2f3fe;
+//$text-main: #4b5679;
+//$white: #ffffff;
+//$light-white: #f9f9f9;
+//$input-bg: #eef0f7;
+//$placeholder: #a0a2b6;
+//$shadow-card: 0 12px 80px rgba(0, 0, 0, 0.12);
+//$shadow-btn: 0 10px 40px rgb(30 61 161 / 44%);
+//$gradient: linear-gradient(90deg, #3a5ed4, #365fe7);

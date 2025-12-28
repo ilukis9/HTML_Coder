@@ -14,4 +14,10 @@
    border-radius: 10px;
    text-align: center;
    box-shadow: 5px 5px 10px variables.$color-sombras;
+   display: grid;
+      grid-template-rows:
+      minmax(48px, auto)  /* título */
+      auto                /* barra */
+      1fr;                /* texto inferior */
+   gap: 12px;
 }

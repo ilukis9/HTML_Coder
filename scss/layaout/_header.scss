@@ -1,4 +1,7 @@
+@use "../util/variables" as v;
+
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
 /* Logo y botones superiores*/
 h1 { 
     font-size: 3rem;
@@ -7,28 +10,29 @@ h1 {
 }
 header{
     font-family: "Lexend", sans-serif;
-    background-color: #9be6e7;
+    background-color: v.$color-prim;
     padding: 10px 50px 10px 30px;
     border-radius: 10px;
+    margin: 10px;
     &.no-bootstrap{
         align-content: center;
         font-family: "Lexend", sans-serif
     }
     nav{
-        ul {
+        ul{
             display: flex;
             column-gap: 25px;
             list-style: none;
             li a{
                 text-decoration: none;
                 color: #2C3E50;
-                border: 2px solid #9be6e7;
+                border: 2px solid v.$color-prim;
                 padding: 8px 8px;
-                background-color: #9be6e7;
+                background-color: v.$color-prim;
                 border-radius: 10px;  
                 transition: background-color 0.25s, color 0.25s; /* animación suave */   
                 &:hover{
-                    background-color: #b9feff;   /* fondo al pasar el mouse */
+                    background-color: v.$c-hobheader;   /* fondo al pasar el mouse */
                 }
                 
             }
@@ -36,9 +40,9 @@ header{
     }
 }
 
-.navbar-toggler {
+.navbar-toggler{
     border: none !important;
     &:focus {
-    background-color: #b9feff;
+    background-color: v.$c-hobheader;
     }
 }

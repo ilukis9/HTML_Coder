@@ -1,7 +1,7 @@
 @use "../util/variables";
 
 body{ /*CORRECCION DE BOOTSTRAP (Lo destesto) */
-   all: revert !important;
+   margin: 0;
    background-color: variables.$color-fondo !important;
    font-family: "Lexend", sans-serif !important;
    color: variables.$color-texto !important;
