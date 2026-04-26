@@ -1,23 +1,23 @@
 @use "../util/variables" as v;
 
-%bordes-comunes{
-   border: 2px solid v.$color-prim;
-   background-color: v.$color-fondoint;
-   border-radius: 12px;
-   box-shadow: 5px 5px 10px v.$color-sombras;
+%bordes-comunes {
+  border: 2px solid v.$color-prim;
+  background-color: v.$color-fondoint;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px v.$color-sombras;
 }
-%lic-box{
-   margin: 5%;
-   padding: 10px;
-   border: 2px solid v.$color-prim;
-   background-color: v.$color-fondoint;
-   border-radius: 10px;
-   text-align: center;
-   box-shadow: 5px 5px 10px v.$color-sombras;
-   display: grid;
-      grid-template-rows:
-      minmax(48px, auto)  /* título */
-      auto                /* barra */
-      1fr;                /* texto inferior */
-   gap: 12px;
+%lic-box {
+  margin: 5%;
+  padding: 10px;
+  border: 2px solid v.$color-prim;
+  background-color: v.$color-fondoint;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 10px v.$color-sombras;
+  display: grid;
+  grid-template-rows:
+    minmax(48px, auto) /* título */
+    auto /* barra */
+    1fr; /* texto inferior */
+  gap: 12px;
 }

@@ -1,195 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piloto Privado de Avion | SoyPiloto</title>
-    <!-- Conexion a bootstrap --> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Conexion animaciones --> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Conexion a CSS --> <link rel="stylesheet" href="../../assets/css/style.css"> 
-    <meta name="description" content="Practicá el examen PPA con preguntas tipo multiple choice. Simulador y material teórico para pilotos en Argentina.">
-    <meta name="keywords" content="examen PPA, piloto privado, estudiar PPA, preguntas PPA, simulador PPA, aviación Argentina, licencia PPA, SoyPiloto">    
-</head>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Animaciones AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <!-- Estilos adicionales para el quiz JS -->
 
-<body>
-<header class="bustrap header-custom bg-header">
-    <nav class="navbar navbar-expand-lg">
+    <meta
+      name="description"
+      content="Practicá el examen PPA con preguntas tipo multiple choice. Simulador y material teórico para pilotos en Argentina."
+    />
+    <meta
+      name="keywords"
+      content="examen PPA, piloto privado, estudiar PPA, preguntas PPA, simulador PPA, aviación Argentina, licencia PPA, SoyPiloto"
+    />
+  </head>
+
+  <body>
+    <header class="bustrap header-custom bg-header">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid container mt-1 mb-1">
-            <a class="navbar-brand" href="../../index.html"><h1 class="m-0 fw-bold d-flex align-items-center gap-2">
-                SoyPiloto 🧑🏼‍✈️
-            </h1></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item fw-bold">
-                        <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
-                    </li>
-                    <li class="nav-item fw-bold">
-                        <a class="nav-link" href="../licencias.html">Licencias</a>
-                    </li>
-                    <li class="nav-item fw-bold">
-                        <a class="nav-link" href="../mision.html">Nuestra misión</a>
-                    </li>
-                    <li class="nav-item fw-bold">
-                        <a class="nav-link" href="../auth/logreg.html">Perfil</a>
-                    </li>
-                </ul>
-            </div>
+          <a class="navbar-brand" href="../../index.html">
+            <h1 class="m-0 fw-bold d-flex align-items-center gap-2">SoyPiloto 🧑🏼‍✈️</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item fw-bold"><a class="nav-link" href="../../index.html">Home</a></li>
+              <li class="nav-item fw-bold"><a class="nav-link" href="../licencias.html">Licencias</a></li>
+              <li class="nav-item fw-bold"><a class="nav-link" href="../mision.html">Nuestra misión</a></li>
+              <li class="nav-item fw-bold"><a class="nav-link" href="../auth/logreg.html">Perfil</a></li>
+            </ul>
+          </div>
         </div>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<main class="container my-4">
-    <h2 class="text-center mb-4">Piloto Privado de Avión</h2>
+    <main class="container my-4">
+      <h2 class="text-center mb-3">Piloto Privado de Avión</h2>
 
-    <!-- Pregunta 1 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
-        <h5 class="fw-bold">Pregunta 1</h5>
-        <p class="pregunta-texto">
-            ¿Cuál es el rango de velocidades para volar con máximo flaps extendido?
-        </p>
-
-        <div class="text-center mb-3">
-            <img src="../../assets/img/Velocimetro.webp" class="img-fluid rounded" width="250">
+      <!-- ── Barra de slots: un cuadrado por pregunta ── -->
+      <div class="slots-wrapper">
+        <h6>Progreso de la práctica</h6>
+        <div class="slots-bar" id="barra-slots">
+          <!-- Generado por ppa.js -->
         </div>
+      </div>
 
-        <form>
-            <label class="preguntas-opciones">
-                <input type="radio" name="p1" value="A">
-                <span>A: 60 a 100 MPH</span>
-            </label>
+      <!-- ── Contenedor donde JS renderiza la pregunta activa ── -->
+      <div id="quiz-container">
+        <!-- Generado por ppa.js -->
+      </div>
+    </main>
 
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="B">
-                <span>B: 60 a 208 MPH</span>
-            </label>
-
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="C">
-                <span>C: 208 MPH</span>
-            </label>
-        </form>
-    </div>
-
-    <!-- Pregunta 2 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
-    <h5 class="fw-bold">Pregunta 2</h5>
-        <p class="pregunta-texto">
-            ¿Que sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?
-        </p>
-
-        <form>
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="A">
-                <span>A: Tanto el volumen del aire que ingresa al carburador como la cantidad de combustible disminuirán.</span>
-            </label>
-
-            <label class=" preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="B">
-                <span>B: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible se incrementara.</span>
-            </label>
-
-            <label class="preguntas-opciones">
-                <input type="radio" name="p1" value="C">
-                <span>C: La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible permanecerá constante.</span>
-            </label>
-        </form>
-    </div>
-
-    <!-- Pregunta 3 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
-        <h5 class="fw-bold">Pregunta 3</h5>
-        <p class="pregunta-texto">
-            ¿Pasados cuantos días sin actividad de vuelo, un Piloto Privado de Avión, debe ser readaptado por un Instructor?
-        </p>
-
-        <form>
-            <label class="preguntas-opciones">
-                <input type="radio" name="p1" value="A">
-                <span>A: 30</span>
-            </label>
-
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="B">
-                <span>B: 45</span>
-            </label>
-
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="C">
-                <span>C: 60</span>
-            </label>
-        </form>
-    </div>
-
-    <!-- Pregunta 4 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
-        <h5 class="fw-bold">Pregunta 4</h5>
-        <p class="pregunta-texto">
-            Si se mantiene una GS de 130 nudos, ¿qué distancia se recorre en 1 h 30 min?
-        </p>
-
-        <form>
-            <label class="preguntas-opciones preguntas-opciones-f" >
-                <input type="radio" name="p1" value="A">
-                <span>A: 206 millas nauticas</span>
-            </label>
-
-            <label class="preguntas-opciones ">
-                <input type="radio" name="p1" value="B">
-                <span>B: 195 millas náuticas.</span>
-            </label>
-
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="C">
-                <span>C: 95 KM.</span>
-            </label>
-        </form>
-    </div>
-
-    <!-- Pregunta 5 -->
-    <div class="carta-pregunta shadow-sm p-4 mb-4" data-aos="fade-up" data-aos-duration="1500">
-        <h5 class="fw-bold">Pregunta 5</h5>
-        <p class="pregunta-texto">
-            Las nubes, la niebla y el rocío siempre se forman cuando:
-        </p>
-
-        <form>
-            <label class="preguntas-opciones ">
-                <input type="radio" name="p1" value="A">
-                <span>A: El vapor de agua se condensa.</span>
-            </label>
-
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="B">
-                <span>B: Cuando el vapor de agua está presente.</span>
-            </label>
-
-            <label class="preguntas-opciones preguntas-opciones-f">
-                <input type="radio" name="p1" value="C">
-                <span>C: Cuando la humedad relativa alcanza el 100%.</span>
-            </label>
-        </form>
-    </div>
-</main>
-
-<footer class="no-bootstrap"> <!-- Redes de pie de pagina -->
-    <hr>
-    <nav>
+    <footer class="no-bootstrap">
+      <hr />
+      <nav>
         <ul>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-            <li><a href="https://www.facebook.com/">Facebook</a></li>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/">Facebook</a></li>
         </ul>
-    </nav>
-</footer>
+      </nav>
+    </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
-</body>
+    <!-- ⭐ Quiz JS -->
+    <script src="../../assets/js/ppa.js"></script>
+  </body>
 </html>

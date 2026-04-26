@@ -1,18 +1,20 @@
 @use "../util/variables" as v;
+
 @mixin botones($ancho, $radio){
    width: $ancho;  
-   text-align: center;                 /*Centrado en boton*/
-   color: v.$color-fondoint; /*Letras*/
-   border-radius: $radio;
+   text-align: center;                 //Centrado en boton
+   color: v.$color-fondoint;           //Letras
+   border-radius: $radio;              //Radio del recuadro
    border: 2px solid v.$color-text; 
    background-color: v.$color-text; 
    cursor: pointer;
-   transition: background-color 0.3s, color 0.3s; /* animación suave */
-   &:hover {                           /*Cambio fondo al pasar el mouse*/
+   transition: background-color 0.3s, color 0.3s; // animación suave 
+   &:hover {                           //Cambio fondo al pasar el mouse
       background-color: v.$color-fondoint;  
       color: v.$color-text;
+      border: 2px solid v.$color-text; 
    }
    &:active {
-      transform: scale(0.98); // Efecto de presión al hacer clic
+      transform: scale(0.98);          // Efecto de presión al hacer clic
    }
 }
