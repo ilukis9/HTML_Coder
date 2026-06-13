@@ -1,5 +1,4 @@
-/Cosas varias
-/node_modules
-assets/css/style.css.map
-/TODO.html
-/gitignore
+node_modules/
+dist/
+.env
+.env.local

@@ -1,0 +1,180 @@
+@use "../util/variables" as v;
+
+// ── Hero ─────────────────────────────────────────────────────────
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: v.$color-text;
+  background: v.$color-prim;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: v.$color-text;
+  margin-bottom: 1rem;
+
+  strong { color: v.$color-text; }
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: #6b7f90;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: v.$color-text;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: opacity 0.2s, transform 0.15s;
+
+  &:hover { opacity: 0.88; }
+  &:active { transform: scale(0.97); }
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background: transparent;
+  color: v.$color-text;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid v.$color-prim;
+  transition: background 0.2s;
+
+  &:hover { background: v.$color-prim; }
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 0;
+
+  img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// ── Features ─────────────────────────────────────────────────────
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0 3rem;
+}
+
+.feature-card {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin: 8px 0 6px;
+  }
+
+  p {
+    font-size: 0.84rem;
+    color: #6b7f90;
+    line-height: 1.55;
+    margin: 0;
+  }
+}
+
+.feature-icon {
+  font-size: 2rem;
+  display: block;
+}
+
+// ── Secciones alternadas ─────────────────────────────────────────
+
+.home-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.home-section-reverse {
+  flex-direction: row-reverse;
+}
+
+.home-section-text {
+  flex: 1;
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: v.$color-text;
+  }
+}
+
+.home-section-img {
+  flex: 1;
+  min-width: 0;
+
+  img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.1);
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+
+@media (max-width: 900px) {
+  .hero, .home-section, .home-section-reverse { flex-direction: column; gap: 2rem; }
+  .features { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 1.7rem; }
+  .hero-actions { flex-direction: column; }
+  .btn-hero-primary, .btn-hero-secondary { width: 100%; justify-content: center; }
+}

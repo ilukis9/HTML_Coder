@@ -1,0 +1,93 @@
+@use "../util/variables" as v;
+
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.login-card {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 18px;
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+}
+
+.login-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+.login-subtitulo {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 11px;
+  background: v.$color-text;
+  color: v.$color-fondoint;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:disabled { opacity: 0.55; cursor: not-allowed; }
+  &:hover:not(:disabled) { opacity: 0.85; }
+}
+
+.login-input-codigo {
+  font-size: 2rem !important;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-align: center;
+  padding: 12px !important;
+}
+
+.login-error {
+  font-size: 0.85rem;
+  color: #dc3545;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.login-enviado {
+  text-align: center;
+
+  .login-enviado-icono {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 0.92rem;
+    opacity: 0.75;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.login-btn-secondary {
+  background: transparent;
+  border: 2px solid v.$color-prim;
+  border-radius: 10px;
+  padding: 8px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover { background: v.$color-prim; }
+}

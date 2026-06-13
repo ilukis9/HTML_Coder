@@ -1,0 +1,493 @@
+@use "../util/variables" as v;
+
+// ── Página ────────────────────────────────────────────────────────
+
+.perfil-page {
+}
+
+// ── Header de usuario ─────────────────────────────────────────────
+
+.perfil-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+}
+
+.perfil-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 110px;
+}
+
+.perfil-trofeo-principal {
+  font-size: 4rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(44, 62, 80, 0.15));
+}
+
+.perfil-trofeos-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.perfil-trofeo-mini {
+  font-size: 1.4rem;
+  opacity: 0.2;
+  filter: grayscale(1);
+  transition: opacity 0.2s, filter 0.2s;
+
+  &--ganado {
+    opacity: 1;
+    filter: grayscale(0);
+  }
+}
+
+.perfil-user-info {
+  flex: 1;
+}
+
+.perfil-user-nombre {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin-bottom: 4px;
+}
+
+.perfil-user-email {
+  font-size: 0.9rem;
+  color: #6b7f90;
+  margin-bottom: 12px;
+}
+
+.perfil-user-nivel {
+  display: inline-block;
+  background: v.$color-prim;
+  color: v.$color-text;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.perfil-user-sub {
+  font-size: 0.85rem;
+  color: #6b7f90;
+  margin: 0;
+}
+
+// ── Sección de licencias ──────────────────────────────────────────
+
+.perfil-seccion-titulo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin-bottom: 1rem;
+}
+
+.perfil-licencias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+// ── Card de licencia ──────────────────────────────────────────────
+
+.perfil-lic-card {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(44, 62, 80, 0.06);
+
+  &--activa {
+    border-color: v.$color-text;
+  }
+}
+
+.perfil-lic-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.perfil-lic-titulo {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin: 0;
+}
+
+.perfil-lic-stats {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.perfil-lic-stat {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+
+  &--ok   { background: #e8f5e9; color: #2e7d32; }
+  &--err  { background: #ffebee; color: #c62828; }
+  &--duda { background: #fff8e1; color: #f57f17; }
+}
+
+.perfil-lic-barra-wrap {
+  width: 100%;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.perfil-lic-barra {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+.perfil-lic-pct {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin: 0;
+}
+
+.perfil-lic-fecha {
+  font-size: 0.75rem;
+  color: #6b7f90;
+  margin: 0;
+}
+
+.perfil-lic-sinact {
+  font-size: 0.82rem;
+  color: #adb5bd;
+  flex: 1;
+  margin: 0;
+}
+
+.perfil-lic-btn {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: v.$color-text;
+  color: white;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; color: white; }
+
+  &--repetir {
+    background: transparent;
+    color: v.$color-text;
+    border: 2px solid v.$color-prim;
+
+    &:hover { background: v.$color-prim; color: v.$color-text; }
+  }
+}
+
+// ── Botones de perfil ─────────────────────────────────────────────
+
+.perfil-btn-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.perfil-btn-editar {
+  align-self: stretch;
+  background: transparent;
+  border: 2px solid v.$color-prim;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: v.$color-text;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover { background: v.$color-prim; }
+}
+
+.perfil-btn-salir {
+  align-self: stretch;
+  background: transparent;
+  border: 2px solid #dc3545;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #dc3545;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover { background: #dc3545; color: white; }
+}
+
+// ── Acciones de la card ───────────────────────────────────────────
+
+.perfil-lic-acciones {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.perfil-lic-btn--historial {
+  background: transparent;
+  color: v.$color-text;
+  border: 2px solid v.$color-prim;
+  cursor: pointer;
+
+  &:hover { background: v.$color-prim; color: v.$color-text; }
+}
+
+// ── Modal base ────────────────────────────────────────────────────
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-box {
+  background: v.$color-fondoint;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 460px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 40px rgba(44, 62, 80, 0.2);
+
+  &--wide { max-width: 580px; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.modal-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin: 0;
+}
+
+.modal-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #6b7f90;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0 0 8px;
+
+  &:hover { color: v.$color-text; }
+}
+
+// ── Formulario de edición ─────────────────────────────────────────
+
+.perfil-campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: v.$color-text;
+    margin-bottom: 5px;
+  }
+
+  input {
+    padding: 9px 12px;
+    border: 2px solid v.$color-prim;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: v.$color-text;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus { border-color: v.$color-text; }
+  }
+}
+
+.perfil-lic-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.perfil-lic-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 2px solid v.$color-prim;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+
+  input[type="checkbox"] { display: none; }
+
+  &--activa {
+    background: v.$color-prim;
+    border-color: v.$color-text;
+    font-weight: 600;
+  }
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.modal-btn-cancelar {
+  background: transparent;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #6b7f90;
+  cursor: pointer;
+
+  &:hover { border-color: #adb5bd; }
+}
+
+.modal-btn-guardar {
+  background: v.$color-text;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; color: white; }
+}
+
+// ── Historial de intentos ─────────────────────────────────────────
+
+.historial-vacio {
+  color: #adb5bd;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.historial-seccion {
+  margin-bottom: 1.5rem;
+}
+
+.historial-seccion-titulo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #6b7f90;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid v.$color-prim;
+}
+
+.historial-fila {
+  background: v.$color-fondo;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+
+.historial-fila-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.historial-tipo {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7f90;
+}
+
+.historial-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+
+  &--ok  { background: #e8f5e9; color: #2e7d32; }
+  &--err { background: #ffebee; color: #c62828; }
+}
+
+.historial-pct {
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: v.$color-text;
+}
+
+.historial-fila-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: #6b7f90;
+}
+
+.historial-fecha {
+  margin-left: auto;
+  font-size: 0.75rem;
+}
+
+// ── Responsive ────────────────────────────────────────────────────
+
+@media (max-width: 900px) {
+  .perfil-licencias-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .perfil-header { flex-direction: column; text-align: center; }
+  .perfil-licencias-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,145 @@
+@use "../util/variables" as v;
+
+// ── Encabezado ───────────────────────────────────────────────────
+
+.licencias-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: v.$color-text;
+  }
+}
+
+.licencias-subtitulo {
+  color: #6b7f90;
+  font-size: 1rem;
+  margin: 0;
+}
+
+// ── Grid de cards ────────────────────────────────────────────────
+
+.licencias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+// ── Card individual ──────────────────────────────────────────────
+
+.licencia-card {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 16px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  animation: fadeInUp 0.45s ease forwards;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 28px rgba(44, 62, 80, 0.13);
+  }
+
+  &.licencia-card-activa {
+    border-color: v.$color-text;
+  }
+}
+
+.licencia-card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.licencia-card-titulo {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin-bottom: 8px;
+}
+
+.licencia-card-detalle {
+  font-size: 0.81rem;
+  color: #6b7f90;
+  flex: 1;
+  margin-bottom: 18px;
+  line-height: 1.55;
+}
+
+.licencia-card-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  .btn-licencia {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+
+    &:only-child {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+// ── Botones ──────────────────────────────────────────────────────
+
+.btn-licencia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid v.$color-text;
+  background-color: v.$color-text;
+  color: v.$color-fondoint;
+  transition: background-color 0.25s, color 0.25s, transform 0.15s;
+
+  &:hover {
+    background-color: v.$color-fondoint;
+    color: v.$color-text;
+  }
+
+  &:active { transform: scale(0.97); }
+
+  &-examen {
+    background-color: transparent;
+    color: #c0392b;
+    border-color: #c0392b;
+
+    &:hover {
+      background-color: #c0392b;
+      color: v.$color-fondoint;
+    }
+  }
+
+  &-pronto {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// ── Responsive ───────────────────────────────────────────────────
+
+@media (max-width: 1024px) {
+  .licencias-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .licencias-grid { grid-template-columns: 1fr; }
+}

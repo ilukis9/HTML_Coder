@@ -1,0 +1,139 @@
+@use "../util/variables" as v;
+
+.onboarding-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.onboarding-steps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.onboarding-step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: v.$color-prim;
+  transition: background 0.3s, transform 0.3s;
+
+  &--activo {
+    background: v.$color-text;
+    transform: scale(1.35);
+  }
+}
+
+.onboarding-card {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.1);
+}
+
+.onboarding-icon {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.onboarding-titulo {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: v.$color-text;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.onboarding-subtitulo {
+  color: #6b7f90;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.onboarding-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: v.$color-text;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.25rem;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  &--inline {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+.onboarding-btn-sec {
+  padding: 10px 20px;
+  background: transparent;
+  color: #6b7f90;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover { border-color: v.$color-prim; color: v.$color-text; }
+}
+
+.onboarding-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.onboarding-tour-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.onboarding-tour-card {
+  background: v.$color-fondo;
+  border: 2px solid v.$color-prim;
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.onboarding-tour-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.onboarding-tour-titulo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin-bottom: 0.5rem;
+}
+
+.onboarding-tour-desc {
+  font-size: 0.82rem;
+  color: #6b7f90;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .onboarding-tour-grid { grid-template-columns: 1fr; }
+  .onboarding-card { padding: 1.5rem 1rem; }
+}

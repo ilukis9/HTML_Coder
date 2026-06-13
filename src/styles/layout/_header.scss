@@ -1,0 +1,248 @@
+@use "../util/variables" as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap');
+
+// ── Header flotante sticky ───────────────────────────────────────
+
+header.header-custom {
+  position: sticky;
+  top: 8px;
+  z-index: 100;
+  background-color: v.$color-prim;
+  border-radius: 14px;
+  width: calc(100% - 24px);
+  max-width: 1400px;
+  margin: 8px auto 0;
+  box-shadow: 0 4px 20px rgba(44, 62, 80, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.15);
+  }
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+}
+
+// ── Brand ────────────────────────────────────────────────────────
+
+.navbar-brand {
+  text-decoration: none;
+  color: v.$color-text;
+
+  &:hover { color: v.$color-text; }
+}
+
+.brand-text {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: v.$color-text;
+  letter-spacing: -0.02em;
+}
+
+// ── Nav desktop ──────────────────────────────────────────────────
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li { margin: 0; }
+}
+
+.nav-link-item {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: v.$color-text;
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: v.$c-hobheader;
+  }
+
+  &.active {
+    background-color: v.$color-text;
+    color: v.$color-fondoint;
+  }
+}
+
+// ── Hamburger ────────────────────────────────────────────────────
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s;
+
+  &:hover { background: v.$c-hobheader; }
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: v.$color-text;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  &.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  &.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+}
+
+// ── Overlay ──────────────────────────────────────────────────────
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+// ── Drawer lateral ───────────────────────────────────────────────
+
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100dvh;
+  background: v.$color-fondoint;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  box-shadow: -6px 0 32px rgba(44, 62, 80, 0.15);
+  transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.open { right: 0; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    a {
+      display: block;
+      font-family: "Lexend", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: v.$color-text;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: background 0.2s;
+
+      &:hover { background: v.$color-fondo; }
+
+      &.active {
+        background: v.$color-prim;
+        color: v.$color-text;
+      }
+    }
+  }
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: v.$color-text;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 8px;
+  line-height: 1;
+  transition: background 0.2s;
+
+  &:hover { background: v.$color-fondo; }
+}
+
+// ── Mostrar hamburger solo en mobile ────────────────────────────
+
+@media (max-width: 768px) {
+  .nav-desktop { display: none; }
+  .hamburger { display: flex; }
+}
+
+// ── Header modo quiz: 3 columnas (brand | timer | título licencia) ──
+
+.header-nav--quiz {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.quiz-header-brand {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-self: start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.quiz-header-timer {
+  justify-self: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: monospace;
+  min-width: 80px;
+  text-align: center;
+}
+
+.quiz-header-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  justify-self: end;
+  text-align: right;
+  opacity: 0.7;
+}
+
+@media (max-width: 576px) {
+  .header-nav--quiz {
+    padding: 7px 14px;
+  }
+  .quiz-header-brand { font-size: 1rem; }
+  .quiz-header-timer { font-size: 0.9rem; min-width: 60px; }
+  .quiz-header-titulo { font-size: 0.75rem; }
+}
