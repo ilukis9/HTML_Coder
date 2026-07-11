@@ -1,0 +1,339 @@
+================================================================
+TEMAS POR LICENCIA — ANAC Argentina
+Investigación de las 18 licencias/certificados de idoneidad que se
+pueden rendir en la ANAC (según argentina.gob.ar/anac/personal-aeronautico/examenes)
+y los temas ("conocimientos aeronáuticos") que exige cada uno.
+
+Fuentes principales:
+- RAAC Parte 61 (Licencias de piloto) — anac.gov.ar
+- RAAC Parte 65 (Personal aeronáutico de tierra: CTA, Despachante, etc.)
+- RAAC Parte 105 (Paracaidismo)
+- Anexo VANT/SVANT (Res. ANAC 11/2021, arts. 61.225-61.237)
+- Publicaciones de preguntas ANAC por licencia (donde no hay temario
+  explícito en la RAAC)
+
+Cómo leer cada bloque:
+  [RAAC x.xx]  = temario textual, tomado literalmente del artículo citado.
+  [inferido]   = la norma no desglosa un temario explícito; se propone
+                 uno estándar de la especialidad. Revisar/ajustar antes
+                 de darlo por definitivo.
+================================================================
+
+
+LAS 18 LICENCIAS / CERTIFICADOS
+--------------------------------
+ 1. Piloto Privado de Avión (PPA) — y por extensión Helicóptero/Giroplano/Aerostato
+ 2. Piloto Comercial (con Habilitación de Vuelo por Instrumentos)
+ 3. Piloto de Transporte de Línea Aérea (ATP)
+ 4. Instructor de Vuelo Avión
+ 5. Rehabilitación Instructor de Vuelo Avión        (mismo temario que #4)
+ 6. Instructor de Vuelo Aeróstato
+ 7. Piloto de Planeador (PPL)
+ 8. Piloto Aeroaplicador de Avión
+ 9. Instructor de Vuelo por Instrumentos en Adiestrador Terrestre (ETVI)
+10. Instructor de Vuelo Helicóptero
+11. Instructor de Vuelo Planeador
+12. Habilitación VFR Controlado
+13. Piloto Combate de Incendios Forestales
+14. Despachante de Aeronave
+15. Alumno Paracaidista
+16. Control Bienal Instructor de Vuelo Avión         (mismo temario que #4)
+17. Controlador de Tránsito Aéreo (CTA)
+18. VANT / SVANT (piloto a distancia / drones)
+
+Nota: #5 y #16 son revalidaciones periódicas de la licencia de Instructor
+de Vuelo Avión, no licencias con temario propio — usan el temario de #4.
+
+
+================================================================
+TEMARIO POR LICENCIA
+================================================================
+
+1) PILOTO PRIVADO DE AVIÓN / HELICÓPTERO / GIROPLANO / AEROSTATO
+[RAAC 61.105 — Subparte E]
+ - Legislación y Reglamentación Aeronáutica
+ - Conocimientos Generales de la Aeronave
+ - Performance y Planificación de Vuelo
+ - Factores Humanos
+ - Meteorología
+ - Aeronavegación
+ - Procedimientos Operacionales
+ - Aerodinámica
+ - Radiotelefonía
+ - Seguridad y Prevención de Accidentes
+ - Mercancías Peligrosas
+(Ya cargado en la app como PPA)
+
+2) PILOTO COMERCIAL (con Habilitación de Vuelo por Instrumentos)
+[RAAC 61.125 — Subparte F]
+ - Legislación y Reglamentación Aérea
+ - Conocimientos Generales de las Aeronaves
+ - Performance y Planificación de Vuelo
+ - Factores Humanos
+ - Meteorología
+ - Navegación
+ - Procedimientos Operacionales
+ - Aerodinámica
+ - Radiotelefonía
+ - Inglés Aeronáutico
+ - Seguridad y Prevención de Accidentes
+ - Mercancías Peligrosas
+ - Procedimientos CFIT (impacto contra el suelo sin pérdida de control)
+
+   También existe "Piloto Comercial de Primera Clase de Avión" [RAAC 61.141
+   — Subparte G], con el mismo temario de arriba pero SIN Inglés ni CFIT.
+   Es la base teórica que reutiliza el ATP (ver #3).
+
+3) PILOTO DE TRANSPORTE DE LÍNEA AÉREA (ATP)
+[RAAC 61.155 — Subparte H]
+ - Reutiliza íntegramente el temario de "Piloto Comercial de Primera Clase
+   de Avión" (61.141) para la categoría avión, o el de "Piloto Comercial"
+   (61.125) para helicóptero. No agrega temas propios — es un nivel de
+   experiencia/examen de vuelo superior sobre el mismo cuerpo teórico.
+
+4) INSTRUCTOR DE VUELO AVIÓN
+[RAAC 61.175 — Subparte I]
+ Común a todas las categorías de Instructor de Vuelo:
+ - Legislación y Documentación Aeronáutica
+ - Fundamentos de la Enseñanza y el Aprendizaje
+ - Metodología de la Instrucción
+ - Práctica de la Enseñanza
+ - Meteorología Aplicada a la Instrucción de Vuelo
+ - Información Aeromédica
+ - Prevención de Accidentes de Aviación
+ Específico de Avión:
+ - Aerodinámica Aplicada a la Instrucción de Vuelo
+ - Aeródromos
+ - Aeronaves y Motores Aplicados a la Instrucción de Vuelo
+ - Maniobras y Procedimientos del Plan de Instrucción de Vuelo
+ - Navegación Aérea y Radioayudas
+ - Regulación de Vuelo y Servicios de Tránsito Aéreo
+
+5) REHABILITACIÓN INSTRUCTOR DE VUELO AVIÓN
+ - Mismo temario que (4). Es una recertificación por inactividad, no un
+   temario nuevo.
+
+6) INSTRUCTOR DE VUELO AEROSTATO
+[RAAC 61.175(e) — Subparte I]
+ Común a Instructor de Vuelo (ver 4) +
+ - Maniobras y Procedimientos de Instrucción de Vuelo de Aeróstato
+ - Regulación de Vuelo y Servicios de Tránsito Aéreo
+
+7) PILOTO DE PLANEADOR (PPL)
+[RAAC 61.97 — Subparte D]
+ - Legislación y Reglamentación Aeronáutica
+ - Maniobras de Vuelo del Planeador
+ - Equipos Radioeléctricos
+ - Estructura y Mecanismos del Planeador
+ - Performance y Planificación de Vuelo
+ - Factores Humanos
+ - Meteorología
+ - Aeronavegación
+ - Procedimientos Operacionales
+ - Aerodinámica Básica
+ - Seguridad y Prevención de Accidentes
+(Corrección respecto de lo cargado hoy en la app: el temario oficial trae
+"Maniobras de Vuelo del Planeador" y "Aerodinámica Básica" como DOS ítems
+separados, no uno fusionado. Ajustar `TEMAS_PPL` en licencias-registry.js.)
+
+8) PILOTO AEROAPLICADOR DE AVIÓN
+[RAAC 61.195 — Subparte J]
+ - Legislación y Documentación Aeronáutica
+ - Equipos Agroaéreos
+ - Estructuras y Técnicas Operativas
+ - Higiene y Primeros Auxilios
+ - Organización y Costos
+ - Plagas Animales y Productos Químicos
+ - Plagas Vegetales y Productos Químicos
+ - Prevención de Accidentes y Factores Humanos
+ (temario muy especializado, casi sin superposición con el resto)
+
+9) INSTRUCTOR DE VUELO POR INSTRUMENTOS EN ADIESTRADOR TERRESTRE (ETVI)
+[inferido — RAAC 65 Subparte O no desglosa temario explícito, solo remite
+ al "Curso de Instrucción Reconocida"]
+ - Legislación y Reglamentación Aeronáutica (IFR)
+ - Procedimientos e Instrumentos de Vuelo IFR
+ - Metodología de la Instrucción
+ - Uso y Operación de Adiestradores Sintéticos de Vuelo
+ - Navegación por Instrumentos y Radioayudas
+ - Meteorología Aplicada al Vuelo IFR
+
+10) INSTRUCTOR DE VUELO HELICÓPTERO
+[RAAC 61.175(c) — Subparte I]
+ Común a Instructor de Vuelo (ver 4) +
+ - Aerodinámica de Helicóptero Aplicada a la Instrucción de Vuelo
+ - Aeródromos
+ - Estructuras y Grupo Motopropulsor del Helicóptero
+ - Maniobras de Vuelo del Helicóptero
+ - Navegación Aérea y Radioayudas
+ - Regulación de Vuelo y Servicios de Tránsito Aéreo
+
+11) INSTRUCTOR DE VUELO PLANEADOR
+[RAAC 61.175(d) — Subparte I]
+ Común a Instructor de Vuelo (ver 4) +
+ - Aerodinámica del Planeador Aplicada a la Instrucción de Vuelo
+ - Maniobras y Procedimientos del Plan de Instrucción de Vuelo
+ - Regulación de Vuelo y Servicios de Tránsito Aéreo
+
+12) HABILITACIÓN VFR CONTROLADO
+[inferido — remite a RAAC 61.7 y a un Manual de Vuelo VFR Controlado,
+ sin temario artículo por artículo]
+ - Espacio Aéreo Controlado y sus Clases
+ - Reglas de Vuelo Visual (VFR) en Espacio Controlado
+ - Comunicaciones y Fraseología ATC
+ - Cartas Aeronáuticas e Interpretación
+ - Servicios de Tránsito Aéreo
+ (Nota: 61.215(a)(4), dentro de Ultraliviano, referencia este mismo
+ contenido como requisito adicional.)
+
+13) PILOTO COMBATE DE INCENDIOS FORESTALES
+[parcialmente oficial — cuestionario ANAC confirma estas áreas, sin
+ artículo RAAC dedicado; es una habilitación adicional sobre una licencia
+ de piloto ya obtenida]
+ - Aerodinámica
+ - Conocimientos Generales de la Aeronave (motores)
+ - Meteorología
+ - Legislación y Reglamentación Aeronáutica (RAAC 61 / Código Aeronáutico)
+ - Aeronavegación
+ - Generalidades de Combate de Incendios Forestales (específico, sin
+   superposición con otras licencias)
+
+14) DESPACHANTE DE AERONAVE
+[RAAC 65.57(b) da 3 competencias generales, no un temario detallado;
+ el resto es inferido de un programa estándar de despachante]
+ - Meteorología (análisis y partes meteorológicos de ruta) [RAAC 65.57(b)(1)]
+ - Aeronavegación / Planificación de Trayectoria de Vuelo [RAAC 65.57(b)(2)]
+ - Despacho y Supervisión Operacional de Vuelo [RAAC 65.57(b)(3)]
+ - Performance y Planificación de Vuelo (peso y balanceo)
+ - Legislación y Reglamentación Aeronáutica
+ - Procedimientos Operacionales (NOTAM, plan de vuelo)
+ - Factores Humanos
+
+15) ALUMNO PARACAIDISTA
+[inferido — RAAC Parte 105 no desglosa temario, solo exige examen escrito
+ con 70% mínimo sobre el Curso de Instrucción reconocido]
+ - Legislación y Reglamentación de Paracaidismo (RAAC 105)
+ - Equipos y Sistemas de Paracaídas
+ - Técnicas de Salto y Caída Libre
+ - Procedimientos de Emergencia
+ - Meteorología Aplicada al Salto
+ - Primeros Auxilios
+
+16) CONTROL BIENAL INSTRUCTOR DE VUELO AVIÓN
+ - Mismo temario que (4). Es una revalidación periódica (cada 2 años),
+   no un temario nuevo.
+
+17) CONTROLADOR DE TRÁNSITO AÉREO (CTA)
+[inferido — RAAC 65.35 remite a un Apéndice A no publicado en el texto
+ consultado; temario estándar de la especialidad ATC]
+ - Legislación y Reglamentación de Tránsito Aéreo
+ - Fraseología y Comunicaciones ATC
+ - Meteorología Aeronáutica
+ - Aeronavegación y Cartas
+ - Sistemas y Equipos ATC / Radar
+ - Factores Humanos
+ - Inglés Aeronáutico
+
+18) VANT / SVANT (piloto a distancia)
+[RAAC 61.229 — Subparte añadida por Res. ANAC 11/2021]
+ - Conocimientos Generales del VANT (según categoría/clase)
+ - Legislación y Reglamentación Aeronáutica (marco normativo VANT)
+ - Factores Humanos
+ - Gestión de la Seguridad Operacional (SMS)
+ - Meteorología Aplicada
+ Complementarios:
+ - Performance, Planificación y Carga de Vuelo
+ - Mercancías Peligrosas (conocimientos generales)
+ - Primeros Auxilios
+
+
+================================================================
+ANÁLISIS: TEMAS COMPARTIDOS VS. EXCLUSIVOS
+================================================================
+
+NÚCLEO COMÚN — aparece en casi todas las licencias de piloto
+(Privado, Comercial, ATP, Planeador, Aeroaplicador, Incendios, y en
+menor medida VANT/CTA/Despachante con variantes de nombre):
+  · Legislación y Reglamentación Aeronáutica
+  · Meteorología
+  · Factores Humanos
+  · Aeronavegación (o "Navegación")
+  · Procedimientos Operacionales
+  · Performance y Planificación de Vuelo
+  · Aerodinámica
+  · Seguridad y Prevención de Accidentes
+
+COMPARTIDO POR VARIAS (no todas):
+  · Conocimientos Generales de la Aeronave — Privado, Comercial, ATP,
+    Combate Incendios
+  · Radiotelefonía / Comunicaciones — Privado, Comercial, ATP, CTA (como
+    "Fraseología y Comunicaciones ATC")
+  · Mercancías Peligrosas — Comercial, ATP, VANT
+  · Inglés Aeronáutico — Comercial, CTA
+  · Metodología de la Instrucción / Enseñanza — todos los Instructor
+    (Avión, Helicóptero, Planeador, Aeróstato, ETVI)
+  · Primeros Auxilios — Aeroaplicador, Paracaidista, VANT (complementario)
+
+EXCLUSIVO DE UNA sola licencia (sin superposición real):
+  · Equipos Agroaéreos, Plagas y Productos Químicos, Organización y
+    Costos → Aeroaplicador
+  · Estructura y Mecanismos del Planeador, Maniobras de Vuelo del
+    Planeador, Equipos Radioeléctricos → Planeador
+  · Información Aeromédica → Instructor
+  · Generalidades de Combate de Incendios Forestales → Incendios
+  · Equipos y Sistemas de Paracaídas, Técnicas de Salto y Caída Libre →
+    Paracaidista
+  · Sistemas y Equipos ATC/Radar → CTA
+  · Conocimientos Generales del VANT, Gestión de la Seguridad
+    Operacional (SMS) → VANT
+  · Despacho y Supervisión Operacional de Vuelo → Despachante
+  · Espacio Aéreo Controlado y Procedimientos VFR → Habilitación VFR
+    Controlado (y referenciado dentro de Ultraliviano)
+
+CONCLUSIÓN PRÁCTICA para licencias-registry.js:
+  Cuando se cargue una licencia nueva, conviene partir del "núcleo común"
+  de arriba (8 temas) y sumarle los temas exclusivos de su especialidad,
+  en vez de inventar un temario desde cero. Los "temas maestros" de la
+  sección siguiente ya están pensados para reutilizarse así.
+
+
+================================================================
+TEMAS MAESTROS (taxonomía canónica + ícono SVG)
+================================================================
+Un mismo tema puede aparecer con nombres levemente distintos según la
+licencia (p.ej. "Aeronavegación" vs. "Navegación"); acá se normalizan a
+un solo nombre canónico, con el archivo de ícono correspondiente en
+public/img/temas/<archivo>.
+
+ 1.  Legislación y Reglamentación Aeronáutica   → legislacion-reglamentacion.svg
+ 2.  Conocimientos Generales de la Aeronave     → conocimientos-generales-aeronave.svg
+ 3.  Performance y Planificación de Vuelo       → performance-planificacion-vuelo.svg
+ 4.  Factores Humanos                           → factores-humanos.svg
+ 5.  Meteorología                               → meteorologia.svg
+ 6.  Aeronavegación                             → aeronavegacion.svg
+ 7.  Procedimientos Operacionales               → procedimientos-operacionales.svg
+ 8.  Aerodinámica                               → aerodinamica.svg
+ 9.  Radiotelefonía y Comunicaciones            → radiotelefonia-comunicaciones.svg
+10.  Seguridad y Prevención de Accidentes       → seguridad-prevencion-accidentes.svg
+11.  Mercancías Peligrosas                      → mercancias-peligrosas.svg
+12.  Inglés Aeronáutico                         → ingles-aeronautico.svg
+13.  Estructura y Mecanismos del Planeador      → estructura-mecanismos-planeador.svg
+14.  Maniobras de Vuelo del Planeador           → maniobras-vuelo-planeador.svg
+15.  Metodología de la Enseñanza y el Aprendizaje → metodologia-instruccion.svg
+16.  Información Aeromédica                     → informacion-aeromedica.svg
+17.  Equipos Agroaéreos                         → equipos-agroaereos.svg
+18.  Sanidad Vegetal/Animal y Productos Químicos → sanidad-productos-quimicos.svg
+19.  Organización y Costos                      → organizacion-costos.svg
+20.  Primeros Auxilios                          → primeros-auxilios.svg
+21.  Sistemas y Equipos ATC / Radar             → sistemas-atc-radar.svg
+22.  Generalidades de Combate de Incendios Forestales → combate-incendios-forestales.svg
+23.  Equipos y Sistemas de Paracaídas           → equipos-sistema-paracaidas.svg
+24.  Técnicas de Salto y Caída Libre            → tecnicas-salto-caida-libre.svg
+25.  Gestión de la Seguridad Operacional (SMS)  → gestion-seguridad-operacional-sms.svg
+26.  Conocimientos Generales del VANT           → conocimientos-generales-vant.svg
+27.  Espacio Aéreo Controlado y Procedimientos VFR → espacio-aereo-controlado-vfr.svg
+28.  Despacho y Supervisión Operacional de Vuelo → despacho-supervision-operacional.svg
+
+Todos los SVG son 48x48, con fondo circular color-prim (#9be6e7) y
+trazo color-text (#2C3E50), para calzar con la paleta de la app
+(src/styles/util/_variables.scss).

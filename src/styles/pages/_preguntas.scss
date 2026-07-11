@@ -1,0 +1,123 @@
+@use "../util/variables" as v;
+
+// ── Tabs de filtro (Todas / Favoritas / Priorizar) ────────────────
+
+.preguntas-filtro-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.preguntas-filtro-tab {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: v.$color-text;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+
+  &:hover { background: v.$color-hoberppa; }
+
+  &--activo {
+    background: v.$color-text;
+    border-color: v.$color-text;
+    color: white;
+  }
+}
+
+// ── Sección por tema ───────────────────────────────────────────────
+
+.preguntas-tema-seccion {
+  margin-bottom: 2rem;
+}
+
+.preguntas-tema-header {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: v.$color-text;
+  margin-bottom: 1rem;
+  padding-bottom: 6px;
+  border-bottom: 2px solid v.$color-prim;
+}
+
+// ── Número de pregunta + toggles (dentro de carta-pregunta-header) ──
+
+.pregunta-num {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7f90;
+}
+
+.pregunta-toggle-group {
+  display: flex;
+  gap: 6px;
+}
+
+.pregunta-toggle-btn {
+  background: v.$color-fondoint;
+  border: 2px solid v.$color-prim;
+  border-radius: 10px;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s, border-color 0.2s, background 0.2s;
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+    background: v.$color-hoberppa;
+  }
+
+  &--activo {
+    opacity: 1;
+    border-color: v.$color-text;
+    background: v.$color-prim;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+}
+
+// ── Las cartas de esta página son solo de referencia: siempre se ve
+//    la opción correcta marcada, sin interacción de click ──
+.preguntas-tema-seccion .preguntas-opciones {
+  cursor: default;
+
+  &:hover {
+    background: v.$color-fondoint;
+    transform: none;
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────
+
+@media (max-width: 576px) {
+  // _quiz.scss oculta .carta-pregunta-header a este ancho (el número de
+  // pregunta ya lo muestra el SlotBar en el quiz interactivo) — acá esa
+  // misma cabecera contiene los botones ⭐/🚩, así que hay que restaurarla.
+  .preguntas-tema-seccion .carta-pregunta-header {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  .preguntas-filtro-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .preguntas-filtro-tab {
+    white-space: nowrap;
+    font-size: 0.8rem;
+    padding: 7px 13px;
+  }
+
+  .preguntas-tema-header { font-size: 0.95rem; }
+}

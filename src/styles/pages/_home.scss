@@ -178,3 +178,11 @@
   .hero-actions { flex-direction: column; }
   .btn-hero-primary, .btn-hero-secondary { width: 100%; justify-content: center; }
 }
+
+@media (min-width: 1400px) {
+  .hero { gap: 4rem; }
+  .hero-title { font-size: clamp(1.8rem, 4vw, 3.2rem); }
+  .hero-sub { max-width: 540px; }
+  .features { gap: 1.75rem; }
+  .home-section, .home-section-reverse { gap: 4rem; }
+}

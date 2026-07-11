@@ -1,51 +1,113 @@
 @use "../util/variables" as v;
 
+$duracion: 0.55s;
+$curva: cubic-bezier(0.65, 0, 0.35, 1);
+
+/* ── Contenedor centrado ── */
 .login-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 72vh;
+  padding: 2rem 1rem;
 }
 
+/* ── Card dos columnas ── */
 .login-card {
+  display: flex;
+  flex-direction: row;
   background: v.$color-fondoint;
-  border: 2px solid v.$color-prim;
   border-radius: 18px;
-  padding: 36px 32px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+  padding: 6px;
+  width: 90vw;
+  max-width: 820px;
+  box-shadow: 0 20px 54px rgba(44, 62, 80, 0.12);
+  overflow: hidden;
+  position: relative;
 }
 
+/* ── Columna izquierda: formulario ── */
+.login-content {
+  flex: 0 0 50%;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform $duracion $curva, opacity 0.16s ease;
+  z-index: 2;
+  opacity: 1;
+
+  h2, h3 { margin: 0; }
+
+  &--oculto { opacity: 0; }
+}
+
+/* ── Columna derecha: imagen ── */
+.login-img-panel {
+  flex: 0 0 50%;
+  transition: transform $duracion $curva;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* ── Animación: modo registro ──
+   El formulario se desliza a la derecha,
+   la imagen se desliza a la izquierda       */
+.login-card--registro {
+  .login-content  { transform: translateX(100%); }
+  .login-img-panel { transform: translateX(-100%); }
+}
+
+/* ── Logo ── */
+.login-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+
+/* ── Textos ── */
 .login-titulo {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  margin: 0 0 6px;
-  text-align: center;
+  color: v.$color-text;
+  margin-bottom: 6px !important;
 }
 
 .login-subtitulo {
-  font-size: 0.9rem;
-  opacity: 0.65;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #6b7f90;
+  margin-bottom: 24px !important;
+  font-weight: 400;
 }
 
-.login-btn {
+/* ── Inputs ── */
+.login-content input[type="email"],
+.login-content input[type="text"] {
+  display: block;
   width: 100%;
-  margin-top: 1rem;
-  padding: 11px;
-  background: v.$color-text;
-  color: v.$color-fondoint;
-  border: none;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: opacity 0.2s;
+  height: 48px;
+  padding: 0 16px;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid v.$color-border;
+  border-radius: 8px;
+  background: transparent;
+  color: v.$color-text;
+  outline-color: v.$color-prim;
+  transition: border-color 0.2s;
 
-  &:disabled { opacity: 0.55; cursor: not-allowed; }
-  &:hover:not(:disabled) { opacity: 0.85; }
+  &::placeholder { color: #adb5bd; }
+  &:focus { border-color: v.$color-text; }
 }
 
 .login-input-codigo {
@@ -53,41 +115,217 @@
   font-weight: 700;
   letter-spacing: 0.4em;
   text-align: center;
-  padding: 12px !important;
 }
 
-.login-error {
-  font-size: 0.85rem;
-  color: #dc3545;
-  margin-top: 8px;
+/* ── Botón principal ── */
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: v.$color-fondoint;
+  background: v.$color-text;
+  border: 2px solid v.$color-text;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  margin-top: 4px;
+
+  &:hover:not(:disabled) {
+    background: v.$color-fondoint;
+    color: v.$color-text;
+  }
+  &:active { transform: scale(0.98); }
+  &:disabled { opacity: 0.45; cursor: not-allowed; }
+}
+
+/* ── Toggle iniciar sesión / crear cuenta ── */
+.login-toggle-text {
+  font-size: 0.88rem;
+  color: #6b7f90;
+  text-align: center;
+  margin-top: 24px;
   margin-bottom: 0;
 }
 
-.login-enviado {
-  text-align: center;
+.login-toggle-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: v.$color-text;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 
-  .login-enviado-icono {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 12px;
-  }
+  &:hover { opacity: 0.7; }
+}
 
-  p {
-    font-size: 0.92rem;
-    opacity: 0.75;
-    margin-bottom: 1.25rem;
+/* ── Botón modo prueba (solo entorno de desarrollo) ── */
+.login-btn-test {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #b8860b;
+  background: #fff8e6;
+  border: 1.5px dashed #d9a900;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+
+  &:hover:not(:disabled) { background: #fdefc4; }
+  &:disabled { opacity: 0.45; cursor: not-allowed; }
+}
+
+/* ── Botón secundario (onboarding nav) ── */
+.login-btn-sec {
+  padding: 10px 18px;
+  background: transparent;
+  color: #6b7f90;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:hover { border-color: v.$color-prim; color: v.$color-text; }
+}
+
+/* Botón primario inline (en nav de dos botones) */
+.login-btn--inline {
+  width: auto;
+  margin-top: 0;
+  padding: 0 20px;
+}
+
+/* Fila de navegación con dos botones */
+.login-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* ── Indicador de pasos onboarding ── */
+.login-ob-steps {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.login-ob-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: v.$color-prim;
+  transition: background 0.3s, transform 0.3s;
+
+  &--activo {
+    background: v.$color-text;
+    transform: scale(1.35);
   }
 }
 
-.login-btn-secondary {
-  background: transparent;
-  border: 2px solid v.$color-prim;
-  border-radius: 10px;
-  padding: 8px 20px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+/* ── Checkboxes de licencias (más compactos dentro del card) ── */
+.login-lic-checks {
+  max-height: 160px;
+  overflow-y: auto;
+  gap: 5px !important;
 
-  &:hover { background: v.$color-prim; }
+  .perfil-lic-check {
+    font-size: 0.82rem;
+    padding: 6px 10px;
+  }
+}
+
+/* ── Cards del tutorial ── */
+.login-tour-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.login-tour-card {
+  background: v.$color-fondo;
+  border: 2px solid v.$color-prim;
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+
+  h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin: 6px 0 4px;
+  }
+
+  p {
+    font-size: 0.78rem;
+    color: #6b7f90;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+.login-tour-icon {
+  font-size: 1.8rem;
+}
+
+/* ── Aviso link/código ── */
+.login-link-aviso {
+  font-size: 0.82rem;
+  color: #6b7f90;
+  background: v.$color-fondo;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+
+/* ── Error ── */
+.login-error {
+  font-size: 0.85rem;
+  color: #dc3545;
+  margin: 4px 0 8px;
+}
+
+/* ── Mobile: colapsa a una sola columna ── */
+@media (max-width: 640px) {
+  .login-card {
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+    padding: 0;
+  }
+
+  .login-img-panel { display: none; }
+
+  .login-content {
+    flex: none;
+    width: 100%;
+    padding: 28px 24px;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .login-titulo { font-size: 1.5rem; }
+  .login-tour-grid { grid-template-columns: 1fr; }
+  .login-lic-checks { max-height: none; }
 }

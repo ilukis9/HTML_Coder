@@ -5,8 +5,8 @@ import { supabase } from "../lib/supabase";
 
 const NAV_BASE = [
   { to: "/", label: "Home" },
-  { to: "/licencias", label: "Licencias" },
   { to: "/mision", label: "Nuestra misión" },
+  { to: "/licencias", label: "Licencias" },
 ];
 
 export default function Header() {
@@ -22,12 +22,15 @@ export default function Header() {
     return () => subscription.unsubscribe()
   }, [])
 
-  const navLinks = [
-    ...NAV_BASE,
-    sesion
-      ? { to: "/perfil", label: "Perfil" }
-      : { to: "/login", label: "Iniciar sesión" },
-  ]
+  const accountLink = sesion
+    ? { to: "/perfil", label: "Perfil" }
+    : { to: "/login", label: "Iniciar sesión" }
+
+  const mainLinks = sesion
+    ? [...NAV_BASE, { to: "/preguntas", label: "Preguntas" }]
+    : NAV_BASE
+
+  const navLinks = [...mainLinks, accountLink]
 
   // Cierra el drawer al navegar
   useEffect(() => {
@@ -91,13 +94,21 @@ export default function Header() {
         </div>
 
         <ul>
-          {navLinks.map(({ to, label }) => (
+          {mainLinks.map(({ to, label }) => (
             <li key={to}>
               <NavLink to={to} className={({ isActive }) => (isActive ? "active" : "")} end={to === "/"}>
                 {label}
               </NavLink>
             </li>
           ))}
+        </ul>
+
+        <ul className="nav-drawer-bottom">
+          <li>
+            <NavLink to={accountLink.to} className={({ isActive }) => (isActive ? "active" : "")}>
+              {accountLink.label}
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </>

@@ -2,18 +2,50 @@ import { PPA_PREGUNTAS } from "./ppa-preguntas";
 import { PPA_PREGUNTAS as PPL_PREGUNTAS } from "./ppl-preguntas";
 
 // Licencias con preguntas — aparecen con botones Estudio y Examen
+// Temas según RAAC Parte 61, art. 61.105 (Conocimientos aeronáuticos) — controla
+// el orden de las secciones en la sección "Preguntas", no requiere que todos
+// los temas tengan preguntas cargadas todavía.
+const TEMAS_PPA = [
+  "Legislación y Reglamentación Aeronáutica",
+  "Conocimientos Generales de la Aeronave",
+  "Performance y Planificación de Vuelo",
+  "Factores Humanos",
+  "Meteorología",
+  "Aeronavegación",
+  "Procedimientos Operacionales",
+  "Aerodinámica",
+  "Radiotelefonía",
+  "Seguridad y Prevención de Accidentes",
+  "Mercancías Peligrosas",
+];
+
+const TEMAS_PPL = [
+  "Legislación y Reglamentación Aeronáutica",
+  "Aerodinámica y Maniobras de Vuelo del Planeador",
+  "Equipos Radioeléctricos",
+  "Estructura y Mecanismos del Planeador",
+  "Performance y Planificación de Vuelo",
+  "Factores Humanos",
+  "Meteorología",
+  "Aeronavegación",
+  "Procedimientos Operacionales",
+  "Seguridad y Prevención de Accidentes",
+];
+
 export const REGISTRY = {
   ppa: {
     icon: "🛩️",
     titulo: "Piloto Privado de Avión",
     detalle: "Preguntas del programa oficial ANAC. Material habilitado para instructores y alumnos con bibliografía sugerida.",
     preguntas: PPA_PREGUNTAS,
+    temas: TEMAS_PPA,
   },
   ppl: {
     icon: "🍃",
     titulo: "Piloto Privado de Planeador",
     detalle: "Publicación de Preguntas Resolución Nº 306/2014. El cuestionario será ampliado periódicamente.",
     preguntas: PPL_PREGUNTAS,
+    temas: TEMAS_PPL,
   },
 };
 

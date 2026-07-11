@@ -9,14 +9,25 @@
 
 .perfil-header {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 1.25rem;
   background: v.$color-fondoint;
   border: 2px solid v.$color-prim;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   margin-bottom: 2.5rem;
   box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+}
+
+@media (min-width: 600px) {
+  .perfil-header {
+    flex-direction: row;
+    text-align: left;
+    gap: 2rem;
+    padding: 2rem;
+  }
 }
 
 .perfil-avatar {
@@ -77,7 +88,11 @@
   font-size: 0.85rem;
   padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
+}
+
+@media (min-width: 600px) {
+  .perfil-user-nivel { margin: 0 0 8px; }
 }
 
 .perfil-user-sub {
@@ -97,8 +112,16 @@
 
 .perfil-licencias-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .perfil-licencias-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+}
+
+@media (min-width: 900px) {
+  .perfil-licencias-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 // ── Card de licencia ──────────────────────────────────────────────
@@ -213,8 +236,19 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  align-self: flex-start;
-  margin-left: auto;
+  align-self: stretch;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .perfil-btn-grupo {
+    align-self: flex-start;
+    width: auto;
+    max-width: none;
+    margin: 0 0 0 auto;
+  }
 }
 
 .perfil-btn-editar {
@@ -282,14 +316,18 @@
 .modal-box {
   background: v.$color-fondoint;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.25rem;
   max-width: 460px;
   width: 100%;
-  max-height: 85vh;
+  max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 8px 40px rgba(44, 62, 80, 0.2);
 
   &--wide { max-width: 580px; }
+}
+
+@media (min-width: 600px) {
+  .modal-box { padding: 2rem; max-height: 85vh; }
 }
 
 .modal-header {
@@ -309,13 +347,26 @@
 .modal-cerrar {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #6b7f90;
   cursor: pointer;
   line-height: 1;
-  padding: 0 0 0 8px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover { color: v.$color-text; }
+}
+
+@media (min-width: 600px) {
+  .modal-cerrar {
+    font-size: 1.2rem;
+    min-width: auto;
+    min-height: auto;
+    padding: 0 0 0 8px;
+  }
 }
 
 // ── Formulario de edición ─────────────────────────────────────────
@@ -336,13 +387,17 @@
     padding: 9px 12px;
     border: 2px solid v.$color-prim;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 16px;
     color: v.$color-text;
     outline: none;
     transition: border-color 0.2s;
 
     &:focus { border-color: v.$color-text; }
   }
+}
+
+@media (min-width: 600px) {
+  .perfil-campo input { font-size: 0.9rem; }
 }
 
 .perfil-lic-checks {
@@ -374,16 +429,36 @@
 
 .modal-acciones {
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   margin-top: 1.5rem;
+
+  .modal-btn-cancelar,
+  .modal-btn-guardar {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .modal-acciones {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+
+    .modal-btn-cancelar,
+    .modal-btn-guardar {
+      width: auto;
+    }
+  }
 }
 
 .modal-btn-cancelar {
   background: transparent;
   border: 2px solid #dee2e6;
   border-radius: 8px;
-  padding: 8px 18px;
+  padding: 12px 18px;
+  min-height: 44px;
   font-size: 0.88rem;
   font-weight: 600;
   color: #6b7f90;
@@ -396,16 +471,27 @@
   background: v.$color-text;
   border: none;
   border-radius: 8px;
-  padding: 8px 18px;
+  padding: 12px 18px;
+  min-height: 44px;
   font-size: 0.88rem;
   font-weight: 600;
   color: white;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity 0.2s;
 
   &:hover { opacity: 0.85; color: white; }
+}
+
+@media (min-width: 600px) {
+  .modal-btn-cancelar,
+  .modal-btn-guardar {
+    padding: 8px 18px;
+    min-height: auto;
+  }
 }
 
 // ── Historial de intentos ─────────────────────────────────────────
@@ -479,15 +565,4 @@
 .historial-fecha {
   margin-left: auto;
   font-size: 0.75rem;
-}
-
-// ── Responsive ────────────────────────────────────────────────────
-
-@media (max-width: 900px) {
-  .perfil-licencias-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .perfil-header { flex-direction: column; text-align: center; }
-  .perfil-licencias-grid { grid-template-columns: 1fr; }
 }

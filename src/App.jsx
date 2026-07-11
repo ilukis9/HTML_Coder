@@ -8,6 +8,8 @@ import LoginPage from './pages/LoginPage'
 import OnboardingPage from './pages/OnboardingPage'
 import EstudioPage from './pages/quiz/EstudioPage'
 import ExamenPage from './pages/quiz/ExamenPage'
+import PreguntasIndexPage from './pages/preguntas/PreguntasIndexPage'
+import PreguntasPage from './pages/preguntas/PreguntasPage'
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
         <Route path="/onboarding" element={<OnboardingPage />} />
         <Route path="/licencias/:id/estudio" element={<EstudioPage />} />
         <Route path="/licencias/:id/examen" element={<ExamenPage />} />
+        <Route path="/preguntas" element={<PreguntasIndexPage />} />
+        <Route path="/preguntas/:id" element={<PreguntasPage />} />
       </Route>
     </Routes>
   )

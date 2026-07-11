@@ -7,7 +7,7 @@
   margin-bottom: 2rem;
 
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6vw, 2rem);
     font-weight: 700;
     margin-bottom: 0.4rem;
     color: v.$color-text;
@@ -20,23 +20,38 @@
   margin: 0;
 }
 
-// ── Grid de cards ────────────────────────────────────────────────
+// ── Grid de cards (mobile-first: lista apilada → grid) ────────────
 
 .licencias-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-// ── Card individual ──────────────────────────────────────────────
+@media (min-width: 600px) {
+  .licencias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .licencias-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+// ── Card individual (mobile-first: fila icono + texto → card centrada) ──
 
 .licencia-card {
   background: v.$color-fondoint;
   border: 2px solid v.$color-prim;
-  border-radius: 16px;
-  padding: 24px 20px 20px;
+  border-radius: 14px;
+  padding: 16px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 14px;
+  text-align: left;
   box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   opacity: 0;
@@ -52,10 +67,32 @@
   }
 }
 
+@media (min-width: 600px) {
+  .licencia-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+  }
+}
+
 .licencia-card-icon {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
+  font-size: 2rem;
   line-height: 1;
+  flex-shrink: 0;
+}
+
+@media (min-width: 600px) {
+  .licencia-card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+  }
+}
+
+.licencia-card-body {
+  flex: 1 1 200px;
+  min-width: 0;
 }
 
 .licencia-card-titulo {
@@ -68,36 +105,51 @@
 .licencia-card-detalle {
   font-size: 0.81rem;
   color: #6b7f90;
-  flex: 1;
-  margin-bottom: 18px;
+  margin: 0;
   line-height: 1.55;
+}
+
+@media (min-width: 600px) {
+  .licencia-card-detalle { flex: 1; margin-bottom: 18px; }
 }
 
 .licencia-card-footer {
   display: flex;
+  flex-basis: 100%;
+  width: 100%;
+  flex-direction: column;
   gap: 8px;
-  flex-wrap: nowrap;
-  justify-content: center;
+}
 
-  .btn-licencia {
-    flex: 1;
-    min-width: 0;
-    text-align: center;
+@media (min-width: 600px) {
+  .licencia-card-footer {
+    flex-basis: auto;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
 
-    &:only-child {
-      flex: 0 1 auto;
+    .btn-licencia {
+      flex: 1;
+      min-width: 0;
+
+      &:only-child {
+        flex: 0 1 auto;
+      }
     }
   }
 }
 
-// ── Botones ──────────────────────────────────────────────────────
+// ── Botones (mobile-first: full-width + tap target grande) ───────
 
 .btn-licencia {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  padding: 8px 16px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 16px;
   border-radius: 8px;
   font-size: 0.84rem;
   font-weight: 600;
@@ -105,6 +157,7 @@
   border: 2px solid v.$color-text;
   background-color: v.$color-text;
   color: v.$color-fondoint;
+  text-align: center;
   transition: background-color 0.25s, color 0.25s, transform 0.15s;
 
   &:hover {
@@ -134,12 +187,10 @@
   }
 }
 
-// ── Responsive ───────────────────────────────────────────────────
-
-@media (max-width: 1024px) {
-  .licencias-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .licencias-grid { grid-template-columns: 1fr; }
+@media (min-width: 600px) {
+  .btn-licencia {
+    width: auto;
+    min-height: auto;
+    padding: 8px 16px;
+  }
 }

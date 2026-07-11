@@ -8,6 +8,7 @@ export const PPA_PREGUNTAS = [
     imagenAncho: 200,
     opciones: ["60 a 100 MPH", "60 a 208 MPH", "208 MPH"],
     correcta: 0,
+    tema: "Performance y Planificación de Vuelo",
   },
   {
     pregunta: "¿Qué sucederá si a medida que se incrementa la altitud de vuelo no se realiza el empobrecimiento en el control de la mezcla?",
@@ -17,21 +18,25 @@ export const PPA_PREGUNTAS = [
       "La densidad del aire que ingresa al carburador disminuirá y la cantidad de combustible permanecerá constante.",
     ],
     correcta: 2,
+    tema: "Conocimientos Generales de la Aeronave",
   },
   {
     pregunta: "¿Pasados cuántos días sin actividad de vuelo, un Piloto Privado de Avión debe ser readaptado por un Instructor?",
     opciones: ["30", "45", "60"],
     correcta: 0,
+    tema: "Legislación y Reglamentación Aeronáutica",
   },
   {
     pregunta: "Si se mantiene una GS de 130 nudos, ¿qué distancia se recorre en 1 h 30 min?",
     opciones: ["206 millas náuticas", "195 millas náuticas", "95 KM"],
     correcta: 1,
+    tema: "Aeronavegación",
   },
   {
     pregunta: "Las nubes, la niebla y el rocío siempre se forman cuando:",
     opciones: ["El vapor de agua se condensa.", "Cuando el vapor de agua está presente.", "Cuando la humedad relativa alcanza el 100%."],
     correcta: 0,
+    tema: "Meteorología",
   },
   {
     pregunta:
@@ -40,6 +45,7 @@ export const PPA_PREGUNTAS = [
     imagenAncho: 600,
     opciones: ["Norte.", "Este", "Sur"],
     correcta: 2,
+    tema: "Aeronavegación",
   },
   {
     pregunta: "Si se desconecta el cable a masa ubicado entre el magneto y el interruptor de la ignición, el motor:",
@@ -49,5 +55,6 @@ export const PPA_PREGUNTAS = [
       "Podría ponerse en marcha accidentalmente si la hélice es movida habiendo combustible en el cilindro.",
     ],
     correcta: 2,
+    tema: "Conocimientos Generales de la Aeronave",
   },
 ];

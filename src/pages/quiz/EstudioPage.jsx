@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import QuizEstudio from '../../components/quiz/QuizEstudio'
 import { REGISTRY } from '../../data/licencias-registry'
 import { useAuth } from '../../hooks/useAuth'
+import { TEST_MODE } from '../../lib/testMode'
 
 export default function EstudioPage() {
   const { id } = useParams()
@@ -11,13 +12,13 @@ export default function EstudioPage() {
   const licencia = REGISTRY[id]
 
   useEffect(() => {
-    if (!cargando && !usuario) {
+    if (!TEST_MODE && !cargando && !usuario) {
       navigate('/licencias', { state: { modalEstudio: id }, replace: true })
     }
   }, [cargando, usuario, id, navigate])
 
   if (!licencia) return <Navigate to="/licencias" replace />
-  if (cargando || !usuario) return null
+  if (!TEST_MODE && (cargando || !usuario)) return null
 
   return (
     <QuizEstudio

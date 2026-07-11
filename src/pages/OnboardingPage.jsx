@@ -33,8 +33,8 @@ export default function OnboardingPage() {
   const handleFinalizar = async () => {
     setGuardando(true)
     await upsertPerfil(usuario.id, {
-      nombre: nombre.trim() || null,
-      licencias,
+      nombre: nombre.trim() || 'Sin nombre',
+      licencias_obtenidas: licencias,
       venccma: vencCMA || null,
     })
     navigate('/licencias', { replace: true })

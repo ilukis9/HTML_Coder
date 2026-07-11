@@ -26,8 +26,10 @@ export default function LicenciasPage() {
             style={{ animationDelay: `${index * 0.08}s` }}
           >
             <div className="licencia-card-icon">{lic.icon}</div>
-            <h3 className="licencia-card-titulo">{lic.titulo}</h3>
-            <p className="licencia-card-detalle">{lic.detalle}</p>
+            <div className="licencia-card-body">
+              <h3 className="licencia-card-titulo">{lic.titulo}</h3>
+              <p className="licencia-card-detalle">{lic.detalle}</p>
+            </div>
             <div className="licencia-card-footer">
               {lic.activa ? (
                 <>

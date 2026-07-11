@@ -4,10 +4,13 @@ export default function Footer() {
       <hr />
       <nav>
         <ul>
-          <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a></li>
-          <li><a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a></li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
+          </li>
         </ul>
       </nav>
     </footer>
-  )
+  );
 }
